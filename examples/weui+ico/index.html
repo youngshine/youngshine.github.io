@@ -1,0 +1,376 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>WeUI+在线演示</title>
+ <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+  <link rel="stylesheet" href="css/weui.min.css"/>
+  <link rel="stylesheet" href="css/index.css"/>
+  <link rel="icon" href="favicon.png"> 
+  <link rel="icon" href="favicon.ico">
+  <script src="js/zepto.min.js"></script>
+  <script>   
+    $(function(){
+        $('.collapse .js-category').click(function(){
+            $parent = $(this).parent('li');
+            if($parent.hasClass('js-show')){
+                $parent.removeClass('js-show');
+                //$(this).children('i').removeClass('icon-35').addClass('icon-74');
+            }else{
+                $parent.siblings().removeClass('js-show');
+                $parent.addClass('js-show');
+                //$(this).children('i').removeClass('icon-74').addClass('icon-35');
+                //$parent.siblings().find('i').removeClass('icon-35').addClass('icon-74');
+            }
+        });
+    });    
+  </script>
+</head>
+
+<body ontouchstart>
+<div class="contianer page-bg">
+    <div class="page-hd">
+        <h1 class="page-hd-title">WeUI+演示</h1>
+        <p class="page-hd-desc">WeUI+是Zepto1.2和WeUI 2.0为基础，收集整理了上百个组件，主要用于微信/手机网站开发。</p>
+    </div>
+    <div class="page-bd">
+        <ul class="collapse">
+            <li>
+                <div class="weui-flex js-category" >
+                    <div class="weui-flex__item" >基础 Base</div>
+                    <img src="./images/icon_nav_form.png" alt="">
+                    <!-- <i class="icon icon-74"></i> -->
+                </div>
+                <div class="page-category js-categoryInner">
+                    <div class="weui-cells page-category-content">
+                        <a class="weui-cell weui-cell_access" href="demo/base-grid.html">
+                            <div class="weui-cell__bd">
+                                <p>九宫格grid</p>
+                            </div>
+                            <div class="weui-cell__ft"></div>
+                        </a>
+                        <a class="weui-cell weui-cell_access" href="demo/base-table.html">
+                            <div class="weui-cell__bd">
+                                <p>表格table</p>
+                            </div>
+                            <div class="weui-cell__ft"></div>
+                        </a>
+                        <a class="weui-cell weui-cell_access" href="demo/base-article.html">
+                            <div class="weui-cell__bd">
+                                <p>文章article</p>
+                            </div>
+                            <div class="weui-cell__ft"></div>
+                        </a>
+                        <a class="weui-cell weui-cell_access" href="demo/base-timeline.html">
+                            <div class="weui-cell__bd">
+                                <p>时间轴timeline</p>
+                            </div>
+                            <div class="weui-cell__ft"></div>
+                        </a>
+
+                        <a class="weui-cell weui-cell_access" href="demo/base11.html">
+                            <div class="weui-cell__bd">
+                                <p>标签tag</p>
+                            </div>
+                            <div class="weui-cell__ft"></div>
+                        </a>
+                        <a class="weui-cell weui-cell_access" href="demo/base-gallery.html">
+                            <div class="weui-cell__bd">
+                                <p>照片墙gallery</p>
+                            </div>
+                            <div class="weui-cell__ft"></div>
+                        </a>
+                        <a class="weui-cell weui-cell_access" href="demo/base-list.html">
+                            <div class="weui-cell__bd">
+                                <p>列表list</p>
+                            </div>
+                            <div class="weui-cell__ft"></div>
+                        </a>
+                        <a class="weui-cell weui-cell_access" href="demo/base-card.html">
+                            <div class="weui-cell__bd">
+                                <p>面板card & panel</p>
+                            </div>
+                            <div class="weui-cell__ft"></div>
+                        </a>
+                        <a class="weui-cell weui-cell_access" href="demo/base-collapse.html">
+                            <div class="weui-cell__bd">
+                                <p>折叠面板Collapse</p>
+                            </div>
+                            <div class="weui-cell__ft"></div>
+                        </a>
+                        <a class="weui-cell weui-cell_access" href="demo/base-animation.html">
+                            <div class="weui-cell__bd">
+                                <p>动画animation</p>
+                            </div>
+                            <div class="weui-cell__ft"></div>
+                        </a>
+                        <a class="weui-cell weui-cell_access" href="demo/base16.html">
+                            <div class="weui-cell__bd">
+                                <p>头像认证/图片/图片排版</p>
+                            </div>
+                            <div class="weui-cell__ft"></div>
+                        </a>
+                        <a class="weui-cell weui-cell_access" href="demo/base-button.html">
+                            <div class="weui-cell__bd">
+                                <p>按钮button</p>
+                            </div>
+                            <div class="weui-cell__ft"></div>
+                        </a>
+                        <a class="weui-cell weui-cell_access" href="demo/base-msg.html">
+                            <div class="weui-cell__bd">
+                                <p>提示页msg</p>
+                            </div>
+                            <div class="weui-cell__ft"></div>
+                        </a>
+                        <a class="weui-cell weui-cell_access" href="demo/base20.html">
+                            <div class="weui-cell__bd">
+                                <p>角标,图片展示</p>
+                            </div>
+                            <div class="weui-cell__ft"></div>
+                        </a>
+                    </div>                  
+                </div>
+            </li>
+            <li>
+                <div class="weui-flex js-category" >
+                    <div class="weui-flex__item" >表单 Form</div>
+                    <img src="./images/icon_nav_panel.png" alt="">
+                </div>
+                <div class="page-category js-categoryInner">
+                    <div class="weui-cells page-category-content">
+                        <a class="weui-cell weui-cell_access" href="demo/form1.html">
+                            <div class="weui-cell__bd">
+                                <p>单选,复选,开关</p>
+                            </div>
+                            <div class="weui-cell__ft"></div>
+                        </a>
+                        <a class="weui-cell weui-cell_access" href="demo/form2.html">
+                            <div class="weui-cell__bd">
+                                <p>文本框/文本域/验证码输入/验证表单</p>
+                            </div>
+                            <div class="weui-cell__ft"></div>
+                        </a>
+                        <a class="weui-cell weui-cell_access" href="demo/form3.html">
+                            <div class="weui-cell__bd">
+                                <p>支付场景</p>
+                            </div>
+                            <div class="weui-cell__ft"></div>
+                        </a>
+                        <a class="weui-cell weui-cell_access" href="demo/form4.html">
+                            <div class="weui-cell__bd">
+                                <p>picker/日期/时间/地址选择</p>
+                            </div>
+                            <div class="weui-cell__ft"></div>
+                        </a>
+                        <a class="weui-cell weui-cell_access" href="demo/form5.html">
+                            <div class="weui-cell__bd">
+                                <p>select</p>
+                            </div>
+                            <div class="weui-cell__ft"></div>
+                        </a>
+                        <a class="weui-cell weui-cell_access" href="demo/form-popup.html">
+                            <div class="weui-cell__bd">
+                                <p>通知popup & notification</p>
+                            </div>
+                            <div class="weui-cell__ft"></div>
+                        </a>
+                        <a class="weui-cell weui-cell_access" href="demo/form-searchbar.html">
+                            <div class="weui-cell__bd">
+                                <p>搜索searchbar</p>
+                            </div>
+                            <div class="weui-cell__ft"></div>
+                        </a>
+                        <a class="weui-cell weui-cell_access" href="demo/form9.html">
+                            <div class="weui-cell__bd">
+                                <p>星级评分</p>
+                            </div>
+                            <div class="weui-cell__ft"></div>
+                        </a>
+                        <a class="weui-cell weui-cell_access" href="demo/form-slider.html">
+                            <div class="weui-cell__bd">
+                                <p>滑块/slider</p>
+                            </div>
+                            <div class="weui-cell__ft"></div>
+                        </a>
+                        <a class="weui-cell weui-cell_access" href="demo/form11.html">
+                            <div class="weui-cell__bd">
+                                <p>表单预览</p>
+                            </div>
+                            <div class="weui-cell__ft"></div>
+                        </a>
+                        <a class="weui-cell weui-cell_access" href="demo/form-upload.html">
+                            <div class="weui-cell__bd">
+                                <p>图片上传和预览,压缩</p>
+                            </div>
+                            <div class="weui-cell__ft"></div>
+                        </a>
+                        <a class="weui-cell weui-cell_access" href="demo/form14.html">
+                            <div class="weui-cell__bd">
+                                <p>上传进度progress</p>
+                            </div>
+                            <div class="weui-cell__ft"></div>
+                        </a>
+                    </div>
+                </div>
+            </li>
+
+            <li>
+                <div class="weui-flex js-category" >
+                    <div class="weui-flex__item" >组件 Component</div>
+                    <img src="./images/icon_nav_zindex.png" alt="">
+                </div>
+                <div class="page-category js-categoryInner">
+                    <div class="weui-cells page-category-content">
+                        <a class="weui-cell weui-cell_access" href="demo/js-modal.html">
+                            <div class="weui-cell__bd">
+                                <p>对话框/toptip/toast</p>
+                            </div>
+                            <div class="weui-cell__ft"></div>
+                        </a>
+                        <a class="weui-cell weui-cell_access" href="demo/js-actionsheet.html">
+                            <div class="weui-cell__bd">
+                                <p>actionsheet</p>
+                            </div>
+                            <div class="weui-cell__ft"></div>
+                        </a>
+                        <a class="weui-cell weui-cell_access" href="demo/js-swiper.html">
+                            <div class="weui-cell__bd">
+                                <p>轮播/swiper</p>
+                            </div>
+                            <div class="weui-cell__ft"></div>
+                        </a>
+                        <a class="weui-cell weui-cell_access" href="demo/player/video.html">
+                            <div class="weui-cell__bd">
+                                <p>DPlayer视频播放器</p>
+                            </div>
+                            <div class="weui-cell__ft"></div>
+                        </a>
+                        <a class="weui-cell weui-cell_access" href="demo/player/music.html">
+                            <div class="weui-cell__bd">
+                                <p>Aplayer音乐播放器</p>
+                            </div>
+                            <div class="weui-cell__ft"></div>
+                        </a>
+                        <a class="weui-cell weui-cell_access" href="demo/js-audio.html">
+                            <div class="weui-cell__bd">
+                                <p>音频播放</p>
+                            </div>
+                            <div class="weui-cell__ft"></div>
+                        </a>
+                        <a class="weui-cell weui-cell_access" href="demo/js-tpl.html">
+                            <div class="weui-cell__bd">
+                                <p>js模板</p>
+                            </div>
+                            <div class="weui-cell__ft"></div>
+                        </a>
+                        <a class="weui-cell weui-cell_access" href="demo/js10.html">
+                            <div class="weui-cell__bd">
+                                <p>底部滚动加载1</p>
+                            </div>
+                            <div class="weui-cell__ft"></div>
+                        </a>
+                        <a class="weui-cell weui-cell_access" href="demo/js15.html">
+                            <div class="weui-cell__bd">
+                                <p>底部滚动加载2</p>
+                            </div>
+                            <div class="weui-cell__ft"></div>
+                        </a>
+                        <a class="weui-cell weui-cell_access" href="demo/js14.html">
+                            <div class="weui-cell__bd">
+                                <p>下拉刷新</p>
+                            </div>
+                            <div class="weui-cell__ft"></div>
+                        </a>
+                        <a class="weui-cell weui-cell_access" href="demo/js17.html">
+                            <div class="weui-cell__bd">
+                                <p>JSSDK演示1.4</p>
+                            </div>
+                            <div class="weui-cell__ft"></div>
+                        </a>
+                        <a class="weui-cell weui-cell_access" href="demo/js-sidebar.html">
+                            <div class="weui-cell__bd">
+                                <p>侧边栏</p>
+                            </div>
+                            <div class="weui-cell__ft"></div>
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="weui-flex js-category" >
+                    <div class="weui-flex__item" >插件 JS Plugins</div>
+                    <img src="./images/icon_nav_more.png" alt="">
+                </div>
+                <div class="page-category js-categoryInner">
+                    <div class="weui-cells page-category-content">
+                        <a class="weui-cell weui-cell_access" href="demo/plugin-fullpage.html">
+                            <div class="weui-cell__bd">
+                                <p>满屏fullpage</p>
+                            </div>
+                            <div class="weui-cell__ft"></div>
+                        </a>
+                        <a class="weui-cell weui-cell_access" href="demo/p3.html">
+                            <div class="weui-cell__bd">
+                                <p>摇一摇</p>
+                            </div>
+                            <div class="weui-cell__ft"></div>
+                        </a>
+                        <a class="weui-cell weui-cell_access" href="demo/p4.html">
+                            <div class="weui-cell__bd">
+                                <p>图片懒加载</p>
+                            </div>
+                            <div class="weui-cell__ft"></div>
+                        </a>
+                        <a class="weui-cell weui-cell_access" href="demo/plugin-subscribe-share.html">
+                            <div class="weui-cell__bd">
+                                <p>微信分享/关注</p>
+                            </div>
+                            <div class="weui-cell__ft"></div>
+                        </a>
+                        <a class="weui-cell weui-cell_access" href="demo/plugin-qrcode.html">
+                            <div class="weui-cell__bd">
+                                <p>二维码/名片生成</p>
+                            </div>
+                            <div class="weui-cell__ft"></div>
+                        </a>
+                        <a class="weui-cell weui-cell_access" href="demo/plugin-axios.html">
+                            <div class="weui-cell__bd">
+                                <p>异步axios</p>
+                            </div>
+                            <div class="weui-cell__ft"></div>
+                        </a>
+                        <a class="weui-cell weui-cell_access" href="demo/plugin-chart.html">
+                            <div class="weui-cell__bd">
+                                <p>f2移动图表</p>
+                            </div>
+                            <div class="weui-cell__ft"></div>
+                        </a>
+                        <a class="weui-cell weui-cell_access" href="demo/plugin-mock.html">
+                            <div class="weui-cell__bd">
+                                <p>模拟数据 mock json</p>
+                            </div>
+                            <div class="weui-cell__ft"></div>
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <li onclick="location.href='demo/help1.html'">
+                <div class="weui-flex " >
+                    <div class="weui-flex__item">帮助说明</div>
+                    <img src="./images/icon_intro.png" alt="">
+                    <!-- <i class="icon icon-108"></i> -->
+                </div>                          
+            </li>                       
+        </ul>
+    </div>
+ 
+    <div class="weui-footer">
+        <p class="weui-footer__links">
+            <a target="_blank" class="weui-footer__link" href="http://github.com/youngshine/weui"><i class="icon icon-114 f24"></i>Github Downloads V5.14</a>
+        </p>
+        <p class="weui-footer__text">Copyright &copy;YIQIZO</p>
+    </div>
+
+</div>
+</body>
+</html>
