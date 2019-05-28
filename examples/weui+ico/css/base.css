@@ -804,3 +804,100 @@ input.b-orange {
   color:#000;
   font-size: 1.25em;
 }
+
+/*
+图片效果*/
+.img-max {
+  display: block;
+  max-width: 100%; }
+.img-box{
+  position: relative;
+}
+.img-box img {
+  border-radius: 2px;
+  cursor: pointer;
+  display: block;
+  max-width: 100%;
+}
+.img-box-title {
+  color: #fff;
+  font-size: 16px;
+  left: 0;
+  position: absolute;
+  text-align: left;
+  bottom: 0;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+  padding:0.2em 0.5em;
+  max-height:500px;
+  background: rgba(0,0,0,.7);
+}
+
+   /*标签*/
+   .weui-label-list .label {
+    display: inline-block;
+    position: relative;
+    line-height: 1.4em;
+    height: 1.4em;
+    padding: 0 0.625em;
+    border: 1px solid #cacccd;
+    border-radius: 0.1875em; }
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+    .weui-label-list  .label {
+        position: relative;
+        border: 0; }
+    .weui-label-list  .label:before {
+        content: "";
+        width: 200%;
+        height: 200%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 1px solid #cacccd;
+        -webkit-transform: scale(0.5);
+        -webkit-transform-origin: 0 0;
+        padding: 1px;
+        -webkit-box-sizing: border-box;
+        border-radius: .1875em; } }
+.weui-label-list .label:active {
+    background-color: #f3f2f2; }
+
+.weui-label-list {margin: 0   0.625em; }
+.weui-label-list .label {margin:0.3125em 0.3125em 0 0; }
+
+.weui-label-s {
+    font-size: 14px;
+    line-height: 1em;
+    display: inline-block;
+    position: relative;
+    padding:1px;
+    color: #ff7f0d;
+   /* border: 1px solid #ff7f0d;*/
+    border-radius: 2px; }
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+    .weui-label-s {
+        position: relative;
+        border: 0;  padding:0.1875em;}
+    .weui-label-s:before {
+        content: "";
+        width: 200%;
+        height: 200%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    /*    border: 1px solid #ff7f0d;*/
+        -webkit-transform: scale(0.5);
+        -webkit-transform-origin: 0 0;
+        padding: 1px;
+        -webkit-box-sizing: border-box;
+        border-radius: 0.3125em } }
+.weui-label-s:active {
+    background-color: #f3f2f2; }
+.weui-label-s:after {
+    content: "";
+    position: absolute;
+    top: -.3125em;
+    left: -5px; }
