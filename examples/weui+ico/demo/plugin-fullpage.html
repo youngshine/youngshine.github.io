@@ -5,7 +5,7 @@
     <title></title>
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
     <link rel="stylesheet" href="../css/weui.css"/>
-    <link rel="stylesheet" href="../css/weuix.css"/>
+    <link rel="stylesheet" href="../css/plugin.css"/>
 
     <script src="../js/zepto.min.js"></script>
     <script src="../js/zepto.fullpage.js"></script>
@@ -55,12 +55,12 @@
                 },
                 beforeChange:function(e){
                     console.log('beforeChange', e.next, e.cur);
-
+                    /*
                     if(e.next ==2){ //第三页停止 从0开始计算
                         $.fn.fullpage.stop()
                     } else {
                         $.fn.fullpage.start()
-                    }
+                    } */
                 },
                 afterChange: function (e) {
                     console.log('afterChange', e.next, e.cur);
@@ -78,8 +78,8 @@
       <div id="fullpage">
           <div class="page page1">1</div>
           <div class="page page2">2</div>
-          <div class="page page3">3
-                            <!-- 
+          <div class="page page3">
+              <!-- 
               <a href="javascript:;" class="weui-btn weui-btn_primary"  onclick="$.fn.fullpage.moveNext(true);">下一页</a>
               -->
           </div>

@@ -5,7 +5,7 @@
     <title></title>
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
     <link rel="stylesheet" href="../css/weui.css"/>
-    <link rel="stylesheet" href="../css/weuix.css"/>
+    <link rel="stylesheet" href="../css/form.css"/>
 
     <script src="../js/zepto.min.js"></script>
 
@@ -16,8 +16,8 @@
         $(function(){
 
             var tmpl = '<li class="weui-uploader__file" style="background-image:url(#url#)"></li>';
-          var      $uploaderInput = $("#uploaderInput"); //上传按钮+
-         var       $uploaderFiles = $("#uploaderFiles");    //图片列表
+            var $uploaderInput = $("#uploaderInput"); //上传按钮+
+            var $uploaderFiles = $("#uploaderFiles");    //图片列表
             var $galleryImg = $(".weui-gallery__img");//相册图片地址
             var $gallery = $(".weui-gallery");
             $uploaderInput.on("change", function(e){
@@ -49,6 +49,7 @@
 </head>
 
 <body ontouchstart>
+
 <div class="page-hd">
     <h1 class="page-hd-title">图片上传和预览压缩upload</h1>
     <p class="page-hd-desc">需要加载lrz.min.js压缩插件</p>
@@ -82,8 +83,7 @@
 
 <div class="weui-gallery" style="display: none">
     <span class="weui-gallery__img"></span>
-    <div class="weui-gallery__opr">
-    </div>
+    <div class="weui-gallery__opr"></div>
 </div>
 
 
@@ -226,10 +226,11 @@
 </div>
 <br>
 <br>
-<div class="weui-footer weui-footer_fixed-bottom">
+<div class="weui-footer">
     <p class="weui-footer__links">
         <a href="../index.html" class="weui-footer__link">WeUI首页</a>
     </p>
 </div>
+
 </body>
 </html>

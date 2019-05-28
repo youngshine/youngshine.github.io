@@ -10,7 +10,6 @@
     <script src="../js/zepto.min.js"></script>
     <script src="../js/mock.min.js"></script>
     <script>
-
         Mock.mock('http://api.com', {
             "list|10": [{
                 'name': '@cname',   //中文名称
@@ -21,7 +20,6 @@
         });
         
         $(function(){
-
             $.get("http://api.com",function(rs){
                 var html='';
                 for(var i=0;i<rs.list.length;i++) {
@@ -41,21 +39,21 @@
 </head>
 
 <body ontouchstart>
+    
 <div class="page-hd">
     <h1 class="page-hd-title">mock模拟数据</h1>
     <p class="page-hd-desc f-green" onclick="location.href='//mockjs.com/examples.html'">开发文档</p>
 </div>
 <div class="weui-cells__title">模拟数据生成列表</div>
-<div class="weui-cells" id="list">
-
-</div>
+<div class="weui-cells" id="list"></div>
 
 <br>
 <br>
-<div class="weui-footer weui-footer_fixed-bottom">
+<div class="weui-footer">
     <p class="weui-footer__links">
         <a href="../index.html" class="weui-footer__link">WeUI首页</a>
     </p>
 </div>
+
 </body>
 </html>
