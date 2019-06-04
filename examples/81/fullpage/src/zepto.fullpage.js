@@ -29,11 +29,13 @@
     
     function fix(cur, pagesLength, loop) {
         if (cur < 0) {
-            return !!loop ? pagesLength - 1 : 0;
+            //return !!loop ? pagesLength - 1 : 0;
+            return 0;
         }
 
         if (cur >= pagesLength) {
-            return !!loop ? 0 : pagesLength - 1;
+            //return !!loop ? 0 : pagesLength - 1;
+            return pagesLength - 1; // 到最后一张，不重复
         }
 
 
