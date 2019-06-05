@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<meta name="author" content="yqizo"/>
+	<meta name="url" content="http://wwww.yiqizo.com/"/>
+	<link rel="stylesheet" type="text/css" href="css/common.css"/>
+	<title>zepto touchslider 移动端轮播插件</title>
+</head>
+<body>
+
+<!--html-->
+<div id="sliderBox"></div>
+
+<!-- pre可以保留显示空格和换行 -->	
+<pre>
+  Tips: 该插件依赖 zepto.min.js 和 toucher.js
+	
+	js压缩前4k，压缩后2k
+
+	Github地址：
+	[[https://github.com/youngshine/toucher]]
+
+</pre>
+	
+<!--js-->
+<script src="js/zepto.min.js"></script>
+<script src="js/toucher.js"></script>
+<script src="js/zepto.touchslider.js"></script>
+<script>
+	$(function(){
+		var imgs = [
+				[
+					"./images/campus/sm/001.jpg",
+					"http://www.yiqizo.com/"
+				],
+				[
+					"./images/campus/sm/002.jpg",
+					"http://www.yiqizo.com/"
+				],
+				[
+					"./images/campus/sm/003.jpg",
+					"http://www.yiqizo.com/"
+				],
+				[
+					"./images/campus/sm/004.jpg",
+					"http://www.yiqizo.com/"
+				],
+				[
+					"./images/campus/sm/005.jpg",
+					"http://www.yiqizo.com/"
+				],
+				[
+					"./images/campus/sm/006.jpg",
+					"http://www.yiqizo.com/"
+				],
+				[
+					"./images/campus/sm/007.jpg",
+					"http://www.yiqizo.com/"
+				],
+				[
+					"./images/campus/sm/008.jpg",
+					"http://www.yiqizo.com/"
+				],
+				[
+					"./images/campus/sm/009.jpg",
+					"http://www.yiqizo.com/"
+				],
+				[
+					"./images/campus/sm/010.jpg",
+					"http://www.yiqizo.com/"
+				],
+				[
+					"./images/campus/sm/011.jpg",
+					"http://www.yiqizo.com/"
+				],
+				[
+					"./images/campus/sm/012.jpg",
+					"http://www.yiqizo.com/"
+				],
+				[
+					"./images/campus/sm/013.jpg",
+					"http://www.yiqizo.com/"
+				],
+				[
+					"./images/campus/sm/014.jpg",
+					"http://www.yiqizo.com/"
+				],
+				[
+					"./images/campus/sm/015.jpg",
+					"http://www.yiqizo.com/"
+				],
+				[
+					"./images/campus/sm/016.jpg",
+					"http://www.yiqizo.com/"
+				],
+				[
+					"./images/campus/sm/017.jpg",
+					"http://www.yiqizo.com/"
+				],
+				[
+					"./images/campus/sm/018.jpg",
+					"http://www.yiqizo.com/"
+				],
+			]
+		$('#sliderBox').touchslider({
+			srcArr: imgs
+		});
+	});
+</script>
+</body>
+</html>
