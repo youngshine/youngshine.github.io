@@ -24,80 +24,91 @@
 		var imgs = [
 				[
 					"./images/campus/sm/thumb/001.jpg",
-					"http://www.yiqizo.com/"
+					//"http://www.yiqizo.com/"
 				],
 				[
 					"./images/campus/sm/thumb/002.jpg",
-					"http://www.yiqizo.com/"
+					//"http://www.yiqizo.com/"
 				],
 				[
 					"./images/campus/sm/thumb/003.jpg",
-					"http://www.yiqizo.com/"
+					//"http://www.yiqizo.com/"
 				],
 				[
 					"./images/campus/sm/thumb/004.jpg",
-					"http://www.yiqizo.com/"
+					//"http://www.yiqizo.com/"
 				],
 				[
 					"./images/campus/sm/thumb/005.jpg",
-					"http://www.yiqizo.com/"
+					//"http://www.yiqizo.com/"
 				],
 				[
 					"./images/campus/sm/thumb/006.jpg",
-					"http://www.yiqizo.com/"
+					//"http://www.yiqizo.com/"
 				],
 				[
 					"./images/campus/sm/thumb/007.jpg",
-					"http://www.yiqizo.com/"
+					//"http://www.yiqizo.com/"
 				],
 				[
 					"./images/campus/sm/thumb/008.jpg",
-					"http://www.yiqizo.com/"
+					//"http://www.yiqizo.com/"
 				],
 				[
 					"./images/campus/sm/thumb/009.jpg",
-					"http://www.yiqizo.com/"
+					//"http://www.yiqizo.com/"
 				],
 				[
 					"./images/campus/sm/thumb/010.jpg",
-					"http://www.yiqizo.com/"
+					//"http://www.yiqizo.com/"
 				],
 				[
 					"./images/campus/sm/thumb/011.jpg",
-					"http://www.yiqizo.com/"
+					//"http://www.yiqizo.com/"
 				],
 				[
 					"./images/campus/sm/thumb/012.jpg",
-					"http://www.yiqizo.com/"
+					//"http://www.yiqizo.com/"
 				],
 				[
 					"./images/campus/sm/thumb/013.jpg",
-					"http://www.yiqizo.com/"
+					//"http://www.yiqizo.com/"
 				],
 				[
 					"./images/campus/sm/thumb/014.jpg",
-					"http://www.yiqizo.com/"
+					//"http://www.yiqizo.com/"
 				],
 				[
 					"./images/campus/sm/thumb/015.jpg",
-					"http://www.yiqizo.com/"
+					//"http://www.yiqizo.com/"
 				],
 				[
 					"./images/campus/sm/thumb/016.jpg",
-					"http://www.yiqizo.com/"
+					//"http://www.yiqizo.com/"
 				],
 				[
 					"./images/campus/sm/thumb/017.jpg",
-					"http://www.yiqizo.com/"
+					//"http://www.yiqizo.com/"
 				],
 				[
 					"./images/campus/sm/thumb/018.jpg",
-					"http://www.yiqizo.com/"
+					//"http://www.yiqizo.com/"
 				]
 			]
 		$('#sliderBox').touchslider({
 			srcArr: imgs
 		});
+
+		$('div').on('click',function(e){
+			console.log(e.target)
+			if(!e.target.src) return
+			var thumbUrl = e.target.src
+			var imgUrl = thumbUrl.replace('/thumb','');
+			WeixinJSBridge.invoke('imagePreview', {  
+				'current' : thumbUrl,  
+				'urls'    : [imgUrl]  
+			});
+		})
 	});
 </script>
 </body>
