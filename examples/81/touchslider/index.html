@@ -18,7 +18,10 @@
 	<div>
 		<audio src="./av/anxiang.mp3" id="bgAudio" loop=“loop” hidden="true"></audio>
 	</div>	
+	<!-- 
 	<div id="loading"><img src="./images/loading.gif" /></div>
+	-->
+	<div id="loadingText">加载中...</div>
 	<!-- html -->
 	<div id="sliderBox"></div>
 	<!-- descript words -->
@@ -43,7 +46,7 @@
 			if (elem.tagName.toLowerCase() == 'img') {  
 				//  图片加载成功 do something...
 				console.log('img loaded')
-				document.getElementById('loading').style.display = "none"
+				document.getElementById('loadingText').style.display = "none"
 				document.getElementById('arrow').style.display = "block"
 				document.getElementById('desc').style.display = "block"
 			}
