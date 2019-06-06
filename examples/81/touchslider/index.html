@@ -28,19 +28,18 @@
 <!--html-->
 <div id="sliderBox"></div>
 
-<div style="padding:15px;">
-	<strong>三明荆东</strong>
-	<span style="float:right;">
-		<a href="index2.html">>>福州金山</a>
-	</span>
+<div id="desc" style="display:none;">
+	<div class="title" style="padding:15px;">
+		<strong>三明荆东</strong>
+		<span style="float:right;">
+			<a href="index2.html">>>福州金山</a>
+		</span>
+	</div>
+	<div class="content" style="text-align:left;padding:0 15px;">
+		<div>那一年，背着行囊，搭乘夜行列车，来到三明荆东，走进农学院校园。</div>
+		<div>兴奋、激动、懵懂、稚嫩、期待、憧憬、求知、探索，大学生活徐徐展开，一幅如诗青春画卷。</div>
+	</div>
 </div>
-
-
-<div class="desc" style="text-align:left;padding:0 15px;">
-	<div>那一年，背着行囊，搭乘夜行列车，来到三明走进荆东校园。</div>
-	<div>兴奋、激动、懵懂、稚嫩、期待、憧憬、求知、探索，大学生活徐徐展开，一幅如诗青春画卷。</div>
-</div>
-
 
 <!-- pre可以保留显示空格和换行 -->	
 
@@ -56,71 +55,54 @@
 				],
 				[
 					"./images/campus/sm/thumb/002.jpg",
-					//"http://www.yiqizo.com/"
 				],
 				[
 					"./images/campus/sm/thumb/003.jpg",
-					//"http://www.yiqizo.com/"
 				],
 				[
 					"./images/campus/sm/thumb/004.jpg",
-					//"http://www.yiqizo.com/"
 				],
 				[
 					"./images/campus/sm/thumb/005.jpg",
-					//"http://www.yiqizo.com/"
 				],
 				[
 					"./images/campus/sm/thumb/006.jpg",
-					//"http://www.yiqizo.com/"
 				],
 				[
 					"./images/campus/sm/thumb/007.jpg",
-					//"http://www.yiqizo.com/"
 				],
 				[
 					"./images/campus/sm/thumb/008.jpg",
-					//"http://www.yiqizo.com/"
 				],
 				[
 					"./images/campus/sm/thumb/009.jpg",
-					//"http://www.yiqizo.com/"
 				],
 				[
 					"./images/campus/sm/thumb/010.jpg",
-					//"http://www.yiqizo.com/"
 				],
 				[
 					"./images/campus/sm/thumb/011.jpg",
-					//"http://www.yiqizo.com/"
 				],
 				[
 					"./images/campus/sm/thumb/012.jpg",
-					//"http://www.yiqizo.com/"
 				],
 				[
 					"./images/campus/sm/thumb/013.jpg",
-					//"http://www.yiqizo.com/"
 				],
 				[
 					"./images/campus/sm/thumb/014.jpg",
-					//"http://www.yiqizo.com/"
 				],
 				[
 					"./images/campus/sm/thumb/015.jpg",
-					//"http://www.yiqizo.com/"
 				],
 				[
 					"./images/campus/sm/thumb/016.jpg",
-					//"http://www.yiqizo.com/"
 				],
 				[
 					"./images/campus/sm/thumb/017.jpg",
-					//"http://www.yiqizo.com/"
 				],
 				[
 					"./images/campus/sm/thumb/018.jpg",
-					//"http://www.yiqizo.com/"
 				]
 			]
 		$('#sliderBox').touchslider({
@@ -128,6 +110,28 @@
 			auto: false
 		});
 
+		isImgLoad(imgs)
+		function isImgLoad(imgs) {
+				for(var i = 0 ; i < imgs.length ; i++){
+						var img = new Image()
+						img.src = imgs[i]
+						var count = 1
+						//_this.imgArrayLoad.push(img)
+						$(img).on('load',function(){
+								console.log($(this).attr("src"))
+								// $(this).remove();
+								count++
+								if(count == imgs.length){
+										// 图片加载完毕，显示页面内容
+										console.log('imgs complete')
+										//document.getElementById('desc').show()
+										$("#desc").show()
+								}
+						})
+				}
+		}
+
+		// 微信浏览器内点击放大图片
 		$('div').on('click',function(e){
 			console.log(e.target)
 			if(!e.target.src) return
