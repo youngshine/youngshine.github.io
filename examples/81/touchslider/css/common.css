@@ -1,12 +1,5 @@
 @CHARSET "UTF-8";
-/* 
- *  全局样式
- *  ---------------------------------------
- *  作者: haibao(http://www.hehaibao.com/)
- *  时间: 2015-08-12
- *  企鹅：964279742
- *  创意源于生活，代码如诗从你我开始
- */
+
 html{overflow-x: hidden;}
 html,body{margin:0;padding:0;width:100%;height:100%;background-color:#f2f2f2;}
 body{max-width:640px;margin:0 auto;position:relative;font: .85em/1.4 "微软雅黑","Microsoft Yahei",'Arial','san-serif';color: #666;}
@@ -20,3 +13,10 @@ a{color:#666;text-decoration:none;}
 #arrow {position:absolute;bottom:10px;right:10px;}
 #arrow li{width:5px;height:5px;float:left;display:inline-block;margin: 0 5px;background-color: #d5dbd6;border-radius: 50%;-webkit-border-radius: 50%;}
 #arrow li.active{background-color:#c95122;}
+
+/* 文字效果fadeIn */
+#loading {
+  z-index: 9999;
+  position: absolute;top:45%;left:45%;
+  height:50px;width:50px;
+}
