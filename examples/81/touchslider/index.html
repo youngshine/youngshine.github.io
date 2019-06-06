@@ -156,13 +156,11 @@
 				for(var i = 0 ; i < imgs.length ; i++){
 						var img = new Image()
 						img.src = imgs[i]
-						var count = 1
 						//_this.imgArrayLoad.push(img)
 						$(img).on('load',function(){
 								console.log($(this).attr("src"))
 								// $(this).remove();
-								count++
-								if(count == imgs.length){
+								if(i == (imgs.length-1){
 										// 图片加载完毕，显示页面内容
 										console.log('imgs complete')
 										//document.getElementById('desc').show()
