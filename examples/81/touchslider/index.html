@@ -63,7 +63,7 @@
 	</div>
 	<div class="content" style="text-align:left;padding:0 15px;">
 		<div>那一年，背着行囊，搭乘夜行列车，来到三明荆东，走进农学院校园。</div>
-		<div>兴奋、激动、懵懂、稚嫩、期待、憧憬，大学生活徐徐展开，一幅如诗青春画卷。</div>
+		<div>兴奋、激动、懵懂、稚嫩、期待、憧憬，大学生活徐徐展开，犹如一幅如诗青春画卷。</div>
 		<div>求知、探索、欢乐、泪水，最青葱的岁月，不一样的人生轨迹。</div>
 	</div>
 </div>
@@ -136,7 +136,7 @@
 			srcArr: imgs,
 			auto: false
 		});
-
+/*
 		var div = '<div class="prompt-wrapper" style="display:none;">';
 			div += '<div id="m"></div>';
 			div += '<div id="lo"><div id="lo-msg">loading...</div></div>';
@@ -149,27 +149,9 @@
 		$("#m")
 			.width($(document).width())
 			.height($(document).height())
-		$('.prompt-wrapper').show()
-
-		isImgLoad(imgs)
-		function isImgLoad(imgs) {
-				for(var i = 0 ; i < imgs.length ; i++){
-						var img = new Image()
-						img.src = imgs[i]
-						//_this.imgArrayLoad.push(img)
-						$(img).on('load',function(){
-								console.log($(this).attr("src"))
-								// $(this).remove();
-								if(i == (imgs.length-1)){
-										// 图片加载完毕，显示页面内容
-										console.log('imgs complete')
-										//document.getElementById('desc').show()
-										//$("#desc").show()
-										$('.prompt-wrapper').hide()
-								}
-						})
-				}
-		}
+		//$('.prompt-wrapper').show()
+*/
+console.log('loaded')
 
 		// 微信浏览器内点击放大图片
 		$('div').on('click',function(e){
