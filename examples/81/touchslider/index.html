@@ -7,75 +7,61 @@
 	<meta name="url" content="http://wwww.yiqizo.com/"/>
 	<title>大学时光【植81金龟子】</title>
 	<link rel="stylesheet" type="text/css" href="css/common.css"/>
-	<style>
-		/*  msg box */
-		#m {
-			filter: alpha(opacity=30);
-			-moz-opacity: 0.3; 
-			opacity: 0.3;
-			position:absolute;
-			z-index:10000;
-			background-color:none;
-		}
-		#lo {
-			position:absolute;
-			width:150px;
-			height:90px;
-			line-height:90px;
-			background-color:#000;
-			color:#fff;
-			text-align:center;
-			z-index:9999;
-			filter: alpha(opacity=70);
-			-moz-opacity: 0.7; 
-			opacity: 0.7;		
-			border-radius:10px;
-			-moz-border-radius:10px; /* Old Firefox */
-		} /* ends - msg box */
-	</style>
 	<!--js-->
 	<script src="js/zepto.min.js"></script>
 	<script src="js/toucher.js"></script>
 	<script src="js/zepto.touchslider.js"></script>
-
-	<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script> 
-	<script type="text/javascript">
-			document.addEventListener("WeixinJSBridgeReady", function () { 
-					document.getElementById('bgAudio').play(); 
-			}, false);
-	</script>
 </head>
 <!-- background:#DAA520; -->
 <body style="background:#DAA520;">
-
+	<!-- background music -->
 	<div>
-		<audio src="./av/anxiang.mp3" id="bgAudio" autoplay loop=“loop” hidden="true"></audio>
+		<audio src="./av/anxiang.mp3" id="bgAudio" loop=“loop” hidden="true"></audio>
 	</div>	
-<!--html-->
-<div id="sliderBox"></div>
 
-<div id="desc">
-	<div class="title" style="padding:15px;">
-		<strong>三明荆东</strong>
-		<span style="float:right;">
-			<a href="index2.html">>>福州金山</a>
-		</span>
+	<!-- html -->
+	<div id="sliderBox"></div>
+	<!-- descript words -->
+	<div id="desc"style="display:none;">
+		<div class="title" style="padding:15px;">
+			<strong>三明荆东</strong>
+			<span style="float:right;"><a href="index2.html">>>福州金山</a></span>
+		</div>
+		<div class="content" style="text-align:left;padding:0 15px;">
+			<div>那一年，背着行囊，来到三明荆东，走进农学院校园。</div>
+			<div>相遇、相识、兴奋、激动、懵懂、稚嫩、期待、憧憬，大学生活开始了。在荒野建起校舍中，唱着光荣属于八十年代新一辈。</div>
+			<div>青春年少朝气蓬勃，强烈求知欲、学习探索、欢乐、泪水，最青葱的岁月，不一样的人生轨迹。徐徐展开，犹如一幅如诗青春画卷。</div>
+		</div>
 	</div>
-	<div class="content" style="text-align:left;padding:0 15px;">
-		<div>那一年，背着行囊，搭乘夜行列车，来到三明荆东，走进农学院校园。</div>
-		<div>兴奋、激动、懵懂、稚嫩、期待、憧憬，大学生活徐徐展开，犹如一幅如诗青春画卷。</div>
-		<div>求知、探索、欢乐、泪水，最青葱的岁月，不一样的人生轨迹。</div>
-	</div>
-</div>
+	<!-- pre可以保留显示空格和换行 -->	
 
-<!-- pre可以保留显示空格和换行 -->	
-
-
-
-
-<script>
-	$(function(){
-		var imgs = [
+	<script>
+		// 图片加载成功时触发load事件，失败不会触发
+		document.addEventListener("load", function (event) {
+			var ev = event ? event : window.event;
+			var elem = ev.target;
+			if (elem.tagName.toLowerCase() == 'img') {  
+				//  图片加载成功 do something...
+				console.log('img loaded')
+				document.getElementById('arrow').style.display = "block"
+				document.getElementById('desc').style.display = "block"
+			}
+		}, true);
+	</script>
+	<script>
+		// 图片加载成功时触发error事件，成功不会触发
+		document.addEventListener("error", function (event) {
+			var ev=event||window.event;
+			var elem = ev.target;
+			if (elem.tagName.toLowerCase() == 'img') { 
+				// 图片加载失败  --替换为默认 
+				elem.src = "../img/default.jpg";
+			}
+		}, true);
+	</script>
+	<script>
+		$(function(){
+			var imgs = [
 				[
 					"./images/campus/sm/thumb/001.jpg",
 					//"http://www.yiqizo.com/"
@@ -132,39 +118,33 @@
 					"./images/campus/sm/thumb/018.jpg",
 				]
 			]
-		$('#sliderBox').touchslider({
-			srcArr: imgs,
-			auto: false
-		});
-/*
-		var div = '<div class="prompt-wrapper" style="display:none;">';
-			div += '<div id="m"></div>';
-			div += '<div id="lo"><div id="lo-msg">loading...</div></div>';
-			div += '</div>';
-		$('body').prepend(div)
-		// msg box ，长宽无法在css设置
-		$("#lo")
-			.css("top",($(document).height()-50)/2)
-			.css("left",($(document).width()-150)/2);
-		$("#m")
-			.width($(document).width())
-			.height($(document).height())
-		//$('.prompt-wrapper').show()
-*/
-console.log('loaded')
 
-		// 微信浏览器内点击放大图片
-		$('div').on('click',function(e){
-			console.log(e.target)
-			if(!e.target.src) return
-			var thumbUrl = e.target.src
-			var imgUrl = thumbUrl.replace('/thumb','');
-			WeixinJSBridge.invoke('imagePreview', {  
-				'current' : thumbUrl,  
-				'urls'    : [imgUrl]  
+			$('#sliderBox').touchslider({
+				srcArr: imgs,
+				auto: false
 			});
-		})
-	});
-</script>
+
+			// 微信浏览器内点击放大图片
+			$('div').on('click',function(e){
+				console.log(e.target)
+				if(!e.target.src) return
+				var thumbUrl = e.target.src
+				var imgUrl = thumbUrl.replace('/thumb','');
+				WeixinJSBridge.invoke('imagePreview', {  
+					'current' : thumbUrl,  
+					'urls'    : [imgUrl]  
+				});
+			})
+		});
+	</script>
+
+	<!-- ios 不能自动播放，在此处理 -->
+	<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script> 
+	<script type="text/javascript">
+			document.addEventListener("WeixinJSBridgeReady", function () { 
+					document.getElementById('bgAudio').play(); 
+			}, false);
+	</script>
+
 </body>
 </html>
