@@ -18,7 +18,7 @@
 	<div>
 		<audio src="./av/anxiang.mp3" id="bgAudio" loop=“loop” hidden="true"></audio>
 	</div>	
-
+	<div id="loading"><img src="./images/loading.gif" /></div>
 	<!-- html -->
 	<div id="sliderBox"></div>
 	<!-- descript words -->
@@ -27,7 +27,7 @@
 			<strong>三明荆东</strong>
 			<span style="float:right;"><a href="index2.html">>>福州金山</a></span>
 		</div>
-		<div class="content" style="text-align:left;padding:0 15px;">
+		<div class="content flyup" style="text-align:left;padding:0 15px;">
 			<div>那一年，背着行囊，来到三明荆东，走进农学院校园。</div>
 			<div>相遇、相识、兴奋、激动、懵懂、稚嫩、期待、憧憬，大学生活开始了。在荒野建起校舍中，唱着光荣属于八十年代新一辈。</div>
 			<div>青春年少朝气蓬勃，强烈求知欲、学习探索、欢乐、泪水，最青葱的岁月，不一样的人生轨迹。徐徐展开，犹如一幅如诗青春画卷。</div>
@@ -43,6 +43,7 @@
 			if (elem.tagName.toLowerCase() == 'img') {  
 				//  图片加载成功 do something...
 				console.log('img loaded')
+				//document.getElementById('loading').style.display = "none"
 				document.getElementById('arrow').style.display = "block"
 				document.getElementById('desc').style.display = "block"
 			}
