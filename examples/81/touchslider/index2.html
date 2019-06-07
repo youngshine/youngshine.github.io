@@ -11,134 +11,151 @@
 	<script src="js/zepto.min.js"></script>
 	<script src="js/toucher.js"></script>
 	<script src="js/zepto.touchslider.js"></script>
-
-	<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script> 
-	<script type="text/javascript">
-			document.addEventListener("WeixinJSBridgeReady", function () { 
-					document.getElementById('bgAudio').play(); 
-			}, false);
-	</script>
 </head>
 <!-- background:#DAA520; -->
 <body style="background:#DAA520;">
-
+	<!-- background music -->
 	<div>
-		<audio src="./av/anxiang.mp3" id="bgAudio" autoplay loop=“loop” hidden="true"></audio>
+		<audio src="./av/anxiang.mp3" id="bgAudio" loop=“loop” autoplay="false" hidden="true"></audio>
 	</div>	
-<!--html-->
-<div id="sliderBox"></div>
+	<!-- 
+	<div id="loading"><img src="./images/loading.gif" /></div>
+	-->
+	<div id="loadingText">
+			<img id="loadingImg" src="./images/loading.gif" />
+	</div>
+	<!-- html -->
+	<div id="sliderBox"></div>
+	<!-- descript words -->
+	<div id="desc">
+		<div class="title" style="padding:15px;font-weight:bold;">
+			<span>福州金山</span>
+			<span style="float:right;"><a href="index.html">>>三明荆东</a></span>
+		</div>
+		<div class="content flyup" style="padding:0 15px;">
+			<div>那一年，背着行囊，来到三明荆东，走进农学院校园。</div>
+			<div>相遇、相识、兴奋、激动、懵懂、纯真、期待、憧憬，唱着“光荣属于八十年代新一辈”，开始了大学生活。</div>
+			<div>在教室、在图书馆、在操场、在田间、在野外，我们求知学习、讨论人生、畅谈理想、运动锻炼、探索自然。</div>
+			<div>这段青葱岁月，恰似五彩斑斓的画面，又如欢快跳跃的音符。</div>
+		</div>
+	</div>
+	<!-- pre可以保留显示空格和换行 -->	
 
-<div style="padding:15px;">
-	<strong>福州金山</strong>
-	<span style="float:right;">
-		<a href="index.html">>>三明荆东</a>
-	</span>
-</div>
+	<script>
+		// 图片加载成功时触发load事件，失败不会触发
+		document.addEventListener("load", function (event) {
+			var ev = event ? event : window.event;
+			var elem = ev.target;
+			if (elem.tagName.toLowerCase() == 'img') {  
+				//  图片加载成功 do something...
+				console.log('img loaded')
+				setTimeout("removeLoading()",1000);
+				//document.getElementById('arrow').style.display = "block"
+				//document.getElementById('desc').style.display = "block"
+			}
+		}, true);
 
-
-<div class="desc" style="text-align:left;padding:0 15px;">
-	<div>大三，来到骄阳似火的福州，开始下半场。</div>
-	<div>新奇、激动、懵懂、稚嫩、期待、憧憬、求知、探索，大学生活徐徐展开，一幅青春画卷。</div>
-</div>
-
-
-<!-- pre可以保留显示空格和换行 -->	
-
-
-
-
-<script>
-	$(function(){
-		var imgs = [
+		function removeLoading(){
+			document.getElementById('loadingText').style.display = "none"
+		}
+	</script>
+	<script>
+		// 图片加载成功时触发error事件，成功不会触发
+		document.addEventListener("error", function (event) {
+			var ev=event||window.event;
+			var elem = ev.target;
+			if (elem.tagName.toLowerCase() == 'img') { 
+				// 图片加载失败  --替换为默认 
+				//elem.src = "../img/default.jpg";
+			}
+		}, true);
+	</script>
+	<script>
+		$(function(){
+			var imgs = [
 				[
 					"./images/campus/fz/thumb/001.jpg",
 					//"http://www.yiqizo.com/"
 				],
 				[
 					"./images/campus/fz/thumb/002.jpg",
-					//"http://www.yiqizo.com/"
 				],
 				[
 					"./images/campus/fz/thumb/003.jpg",
-					//"http://www.yiqizo.com/"
 				],
 				[
 					"./images/campus/fz/thumb/004.jpg",
-					//"http://www.yiqizo.com/"
 				],
 				[
 					"./images/campus/fz/thumb/005.jpg",
-					//"http://www.yiqizo.com/"
 				],
 				[
 					"./images/campus/fz/thumb/006.jpg",
-					//"http://www.yiqizo.com/"
 				],
 				[
 					"./images/campus/fz/thumb/007.jpg",
-					//"http://www.yiqizo.com/"
 				],
 				[
 					"./images/campus/fz/thumb/008.jpg",
-					//"http://www.yiqizo.com/"
 				],
 				[
 					"./images/campus/fz/thumb/009.jpg",
-					//"http://www.yiqizo.com/"
 				],
 				[
 					"./images/campus/fz/thumb/010.jpg",
-					//"http://www.yiqizo.com/"
 				],
 				[
 					"./images/campus/fz/thumb/011.jpg",
-					//"http://www.yiqizo.com/"
 				],
 				[
 					"./images/campus/fz/thumb/012.jpg",
-					//"http://www.yiqizo.com/"
 				],
 				[
 					"./images/campus/fz/thumb/013.jpg",
-					//"http://www.yiqizo.com/"
 				],
 				[
 					"./images/campus/fz/thumb/014.jpg",
-					//"http://www.yiqizo.com/"
 				],
 				[
 					"./images/campus/fz/thumb/015.jpg",
-					//"http://www.yiqizo.com/"
 				],
 				[
 					"./images/campus/fz/thumb/016.jpg",
-					//"http://www.yiqizo.com/"
 				],
 				[
 					"./images/campus/fz/thumb/017.jpg",
-					//"http://www.yiqizo.com/"
 				],
 				[
 					"./images/campus/fz/thumb/018.jpg",
-					//"http://www.yiqizo.com/"
 				]
 			]
-		$('#sliderBox').touchslider({
-			srcArr: imgs,
-			auto: false
-		});
 
-		$('div').on('click',function(e){
-			console.log(e.target)
-			if(!e.target.src) return
-			var thumbUrl = e.target.src
-			var imgUrl = thumbUrl.replace('/thumb','');
-			WeixinJSBridge.invoke('imagePreview', {  
-				'current' : thumbUrl,  
-				'urls'    : [imgUrl]  
+			$('#sliderBox').touchslider({
+				srcArr: imgs,
+				auto: false
 			});
-		})
-	});
-</script>
+
+			// 微信浏览器内点击放大图片
+			$('div').on('click',function(e){
+				console.log(e.target)
+				if(!e.target.src) return
+				var thumbUrl = e.target.src
+				var imgUrl = thumbUrl.replace('/thumb','');
+				WeixinJSBridge.invoke('imagePreview', {  
+					'current' : thumbUrl,  
+					'urls'    : [imgUrl]  
+				});
+			})
+		});
+	</script>
+
+	<!-- ios 不能自动播放，在此处理 -->
+	<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script> 
+	<script type="text/javascript">
+			document.addEventListener("WeixinJSBridgeReady", function () { 
+					document.getElementById('bgAudio').play(); 
+			}, false);
+	</script>
+
 </body>
 </html>
