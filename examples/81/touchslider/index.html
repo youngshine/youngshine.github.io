@@ -21,11 +21,13 @@
 	<!-- 
 	<div id="loading"><img src="./images/loading.gif" /></div>
 	-->
-	<div id="loadingText">加载中...</div>
+	<div id="loadingText">
+			<img id="loadingImg" src="./images/loading.gif" />
+	</div>
 	<!-- html -->
 	<div id="sliderBox"></div>
 	<!-- descript words -->
-	<div id="desc"style="display:none;">
+	<div id="desc">
 		<div class="title" style="padding:15px;">
 			<strong>三明荆东</strong>
 			<span style="float:right;"><a href="index2.html">>>福州金山</a></span>
@@ -46,11 +48,15 @@
 			if (elem.tagName.toLowerCase() == 'img') {  
 				//  图片加载成功 do something...
 				console.log('img loaded')
-				document.getElementById('loadingText').style.display = "none"
-				document.getElementById('arrow').style.display = "block"
-				document.getElementById('desc').style.display = "block"
+				setTimeout("removeLoading()",1000);
+				//document.getElementById('arrow').style.display = "block"
+				//document.getElementById('desc').style.display = "block"
 			}
 		}, true);
+
+		function removeLoading(){
+			document.getElementById('loadingText').style.display = "none"
+		}
 	</script>
 	<script>
 		// 图片加载成功时触发error事件，成功不会触发
