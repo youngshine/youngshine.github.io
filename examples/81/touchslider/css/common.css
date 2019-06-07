@@ -15,10 +15,12 @@ a{color:#666;text-decoration:none;}
 #arrow li.active{background-color:#c95122;}
 
 /* 文字效果fadeIn */
-#loading {
-  z-index: 9999;
-  position: absolute;top:45%;left:45%;
-  height:50px;width:50px;
+/* loading图片居中  */
+#loadingImg {
+  position: absolute;
+  margin: auto;
+  left: 0; right: 0; top: 0; bottom: 0;
+  width:50px;height:50px;
 }
 #loadingText {
   width:100%;height:100%;top:50px;
