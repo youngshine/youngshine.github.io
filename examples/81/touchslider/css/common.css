@@ -14,18 +14,17 @@ a{color:#666;text-decoration:none;}
 #arrow li{width:3px;height:3px;float:left;display:inline-block;margin: 0 3px;background-color: #d5dbd6;border-radius: 50%;-webkit-border-radius: 50%;}
 #arrow li.active{background-color:#c95122;}
 
-/* 文字效果fadeIn */
+/* loading文字 */
+#loadingText {
+  position: absolute;left:0;top:0;
+  width:100%;height:100%;
+  background: #DAA520;
+  z-index: 999;
+}
 /* loading图片居中  */
 #loadingImg {
   position: absolute;
   margin: auto;
   left: 0; right: 0; top: 0; bottom: 0;
   width:50px;height:50px;
-}
-#loadingText {
-  position: absolute;left:0;top:0;
-  width:100%;height:100%;
-  text-align:center;
-  background: #DAA520;
-  z-index: 999;
 }
