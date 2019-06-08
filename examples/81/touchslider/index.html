@@ -21,12 +21,14 @@
 	<!-- 
 	<div id="loading"><img src="./images/loading.gif" /></div>
 	-->
-	<div id="loadingText">
-			<img id="loadingImg" src="./images/loading.gif" />
+	<div id="loadingPage">
+		<!-- 
+		<div id="appLoadingIndicator">正在加载...</div> -->
+		<img id="loadingImg" src="./images/loading.gif" />
 	</div>
-	<!-- html -->
-	<div id="sliderBox"></div>
-	<!-- descript words -->
+		<!-- html -->
+		<div id="sliderBox"></div>
+		<!-- descript words -->
 
 		<div class="content flyup" style="padding:15px;font-size:11px;">
 			<div style="margin-bottom:5px;">那一年，背着行囊，来到三明，走进农学院。</div>
@@ -53,7 +55,7 @@
 		}, true);
 
 		function removeLoading(){
-			document.getElementById('loadingText').style.display = "none"
+			document.getElementById('loadingPage').style.display = "none"
 		}
 	</script>
 	<script>
