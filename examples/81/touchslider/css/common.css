@@ -25,4 +25,6 @@ a{color:#666;text-decoration:none;}
 #loadingText {
   width:100%;height:100%;top:50px;
   text-align:center;
+  background:#DAA520 
+  z-index: 999;
 }
