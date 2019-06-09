@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>植81金龟子通讯录</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/weui/2.0.0/style/weui.min.css"/>
+    <script src="https://cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+</head>
+<body>
+  <div class="page">
+
+    <div class="page__bd">
+      <div class="weui-cells">
+        <div class="weui-cell">
+          <div class="weui-cell__bd">
+              name
+          </div>
+          <div class="weui-cell__ft">mobile</div>
+        </div>
+      </div> 
+    </div>       
+<!---
+    <div class="bd">
+      <div class="weui_cells">
+        <div class="weui_cell">
+            <div class="weui_cell_bd weui_cell_primary">
+                <p>name</p>
+            </div>
+            <div class="weui_cell_ft">mobile</div>
+        </div>
+						
+        </div>
+      </div>	
+    </div>
+  -->
+  </div> <!-- page ends -->
+
+	
+	
+	<script>
+    $(function () {
+      var $list = $('.weui-cells'),
+          $listItem = $('.weui-cell').remove()
+      console.log($('.weui-cell'))
+      $.ajax({
+        url: 'http://ysil.sc2yun.com/z/81/script/weixinJS/wx_userlist.php', //来自企业号通讯录weixinJS，用token
+        dataType: "json", 
+        data: {"department_id": 1},
+        //timeout: 6000,
+        success: function(data){	
+          console.log(data.userlist)
+          var arr = data.userlist
+          arr.sort(getSortFun('asc', 'userid'));
+          //数组排序
+          function getSortFun(order, sortBy) {
+              var ordAlpah = (order == 'asc') ? '>' : '<';
+              var sortFun = new Function('a', 'b', 'return a.' + 
+              sortBy + ordAlpah + 'b.' + sortBy + '?1:-1');
+              return sortFun;
+          }
+          
+          populateData(arr) //关联数组如何排序？？？
+          //callback(data.userlist)
+        },
+      });
+      function populateData(items){
+        items.forEach(function(item){
+          $node = $listItem.clone()
+          $node.find('.weui-cell__bd').text(item.name);
+          $node.find('.weui-cell__ft').text(item.mobile);
+          $list.append($node)
+        })
+      }
+    })	
+	</script>
+</body>
+</html>
