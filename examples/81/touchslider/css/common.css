@@ -57,6 +57,7 @@ a{color:#666;text-decoration:none;}
 
 /* 文字效果 */
 .fadeIn {
+  color: #333;
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
   -webkit-animation-duration: 9s;
