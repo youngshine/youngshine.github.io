@@ -118,9 +118,9 @@
 				console.log(e.target)
         if(!e.target.src) return
 				var thumbUrl = e.target.src
-        //var imgUrl = thumbUrl.replace('/thumb','');
+        var imgUrl = thumbUrl.replace('/thumb','');
         var imgPath = thumbUrl.substr(0,thumbUrl.indexOf('thumb'))
-        console.log(imgPath)
+        //console.log(imgPath)
         var arr = [];
         arr.push(imgPath+'001.jpg')
         arr.push(imgPath+'002.jpg')
@@ -140,9 +140,11 @@
         arr.push(imgPath+'016.jpg')
         arr.push(imgPath+'017.jpg')
         arr.push(imgPath+'018.jpg')
+        console.log('current: ',imgUrl)
+        console.log('arr: ',arr) //[imgUrl]  
 				WeixinJSBridge.invoke('imagePreview', {  
-					'current' : thumbUrl,  
-					'urls'    : arr
+					'current' : imgUrl,  
+					'urls'    : arr 
 				});
 			})
     </script>
