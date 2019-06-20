@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@nutui/nutui@2.1.2/dist/nutui.min.css">  -->
     <style>
       body {
-        background:grey;
+        background:#333;
       }
       /* loading文字 */
       #loadingPage {
         position: absolute;
         left:0;top:0;
         width:100%;height:100%;
-        background: grey;
+        background: #333;
         text-align:center;
         z-index: 999;
       }
@@ -43,9 +43,12 @@
         flex: 1;
       }
       
-      .HolyGrail-nav, .HolyGrail-ads {
-        /* 两个边栏的宽度设为12em flex: 0 0 12em; */
-        width:80px;
+      .HolyGrail-nav  {
+        /* 两个边栏的宽度设为12em */
+        width: 80px;
+        color: #fff;
+        padding: 0 5px;
+        font-size: 0.8em;
       }
       
       .HolyGrail-nav {
@@ -57,7 +60,7 @@
       .parent {
         width: 100%;
         height: 100%;
-        background-color: grey;
+        /* background-color: grey; */
         display: flex;
         flex-flow: row wrap;
         align-content: flex-start;
@@ -66,9 +69,9 @@
       .child {
         box-sizing: border-box;
         background-color: white;
-        /*flex: 0 0 25%; */
+        /* flex: 0 0 25%; */
         width: 80px; height:60px;
-        border: 2px solid grey;
+        border: 2px solid #333;
       }
 
     </style>
