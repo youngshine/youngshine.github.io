@@ -111,17 +111,38 @@
     <script src="https://cdn.jsdelivr.net/npm/@nutui/nutui@2.1.2/dist/nutui.min.js"></script>
     -->
     <script src="app.js"></script>
-    
-        <script>
+
+    <script>
       // 微信浏览器内点击放大图片
 			document.addEventListener('click',function(e){
 				console.log(e.target)
         if(!e.target.src) return
 				var thumbUrl = e.target.src
-				var imgUrl = thumbUrl.replace('/thumb','');
+        //var imgUrl = thumbUrl.replace('/thumb','');
+        var imgPath = thumbUrl.substr(0,thumbUrl.indexOf('thumb'))
+        console.log(imgPath)
+        var arr = [];
+        arr.push(imgPath+'001.jpg')
+        arr.push(imgPath+'002.jpg')
+        arr.push(imgPath+'003.jpg')
+        arr.push(imgPath+'004.jpg')
+        arr.push(imgPath+'005.jpg')
+        arr.push(imgPath+'006.jpg')
+        arr.push(imgPath+'007.jpg')
+        arr.push(imgPath+'008.jpg')
+        arr.push(imgPath+'009.jpg')
+        arr.push(imgPath+'010.jpg')
+        arr.push(imgPath+'011.jpg')
+        arr.push(imgPath+'012.jpg')
+        arr.push(imgPath+'013.jpg')
+        arr.push(imgPath+'014.jpg')
+        arr.push(imgPath+'015.jpg')
+        arr.push(imgPath+'016.jpg')
+        arr.push(imgPath+'017.jpg')
+        arr.push(imgPath+'018.jpg')
 				WeixinJSBridge.invoke('imagePreview', {  
 					'current' : thumbUrl,  
-					'urls'    : [imgUrl]  
+					'urls'    : arr //[imgUrl]  
 				});
 			})
     </script>
