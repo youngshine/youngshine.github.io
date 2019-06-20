@@ -111,6 +111,20 @@
     <script src="https://cdn.jsdelivr.net/npm/@nutui/nutui@2.1.2/dist/nutui.min.js"></script>
     -->
     <script src="app.js"></script>
+    
+        <script>
+      // 微信浏览器内点击放大图片
+			document.addEventListener('click',function(e){
+				console.log(e.target)
+        if(!e.target.src) return
+				var thumbUrl = e.target.src
+				var imgUrl = thumbUrl.replace('/thumb','');
+				WeixinJSBridge.invoke('imagePreview', {  
+					'current' : thumbUrl,  
+					'urls'    : [imgUrl]  
+				});
+			})
+    </script>
 
 </body>
 </html>
