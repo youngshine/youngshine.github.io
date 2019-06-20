@@ -1,14 +1,6 @@
 
 //"use strict";
 
-var Loading = {
-  template: `
-  <sui-dimmer active>
-    <sui-loader>Loading...</sui-loader>
-  </sui-dimmer>
-  `,
-}
-
 new Vue({
   el: '#app',
   template: `
@@ -16,7 +8,7 @@ new Vue({
 
     <div class="HolyGrail">
       <div class="HolyGrail-body">
-        <nav class="HolyGrail-nav">2015<br>福州|宁德</nav>
+        <nav class="HolyGrail-nav">2015<br>福州<br>宁德</nav>
         <main class="parent HolyGrail-content">
           <img class="child" src="./images/2015/thumb/001.jpg" />
           <img class="child" src="./images/2015/thumb/002.jpg" />
@@ -124,7 +116,7 @@ new Vue({
     <br>
     <div class="HolyGrail">
       <div class="HolyGrail-body">
-        <nav class="HolyGrail-nav">1995<br>福州母校</nav>
+        <nav class="HolyGrail-nav">1995<br>福州<br>母校</nav>
         <main class="parent HolyGrail-content">
           <img class="child" src="./images/1995/thumb/001.jpg" />
           <img class="child" src="./images/1995/thumb/002.jpg" />
