@@ -35,7 +35,7 @@ new Vue({
     <br>
     <div class="HolyGrail">
       <div class="HolyGrail-body">
-        <nav class="HolyGrail-nav">2015<br>泉州</nav>
+        <nav class="HolyGrail-nav">2010<br>泉州</nav>
         <main class="parent HolyGrail-content">
           <img class="child" src="./images/2010/thumb/001.jpg" />
           <img class="child" src="./images/2010/thumb/002.jpg" />
@@ -116,7 +116,7 @@ new Vue({
     <br>
     <div class="HolyGrail">
       <div class="HolyGrail-body">
-        <nav class="HolyGrail-nav">1995<br>福州<br>母校</nav>
+        <nav class="HolyGrail-nav">1995<br>福州</nav>
         <main class="parent HolyGrail-content">
           <img class="child" src="./images/1995/thumb/001.jpg" />
           <img class="child" src="./images/1995/thumb/002.jpg" />
