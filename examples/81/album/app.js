@@ -17,7 +17,7 @@ new Vue({
 
   template: `
   <div @click="previewImg(event)">
-    <p style="padding:10px 10px 10px 75px;color:#fff;">岁月如歌。</p>
+    <p style="padding:10px 10px 10px 75px;color:#aaa;">岁月如歌。</p>
     <div class="HolyGrail">
       <div class="HolyGrail-body">
         <nav class="HolyGrail-nav">2015<br>福州<br>宁德</nav>
