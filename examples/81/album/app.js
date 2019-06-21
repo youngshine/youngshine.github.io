@@ -12,7 +12,9 @@ var Loading = {
 new Vue({
   el: '#app',
   mounted() {
-    document.querySelector("#loadingPage").remove()
+    this.$nextTick(()=>{
+      document.querySelector("#loadingPage").remove()
+    })
   },
 
   template: `
