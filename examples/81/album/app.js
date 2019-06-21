@@ -18,7 +18,7 @@ new Vue({
   template: `
   <div @click="previewImg(event)">
     <div style="padding-left:75px;color:#fff;">
-      <h3>岁月如歌</h3>
+      <p>似水年华</p>
       <p style="color:#888;font-size:0.8em;margin-top:-15px;">最美的相遇，不言过往；<br>最好的离别，不问归期。</p>
     </div>
     <div class="HolyGrail">
