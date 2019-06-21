@@ -133,7 +133,7 @@ new Vue({
     <br>
     <div class="HolyGrail">
       <div class="HolyGrail-body">
-        <nav class="HolyGrail-nav">1995<br>福州<br>母校</nav>
+        <nav class="HolyGrail-nav">1995<br>福州</nav>
         <main class="parent HolyGrail-content">
           <img class="child" src="./images/1995/thumb/001.jpg" />
           <img class="child" src="./images/1995/thumb/002.jpg" />
