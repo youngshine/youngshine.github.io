@@ -17,9 +17,9 @@ new Vue({
 
   template: `
   <div @click="previewImg(event)">
-    <div style="padding-left:75px;color:#fff;">
-      <p>似水年华</p>
-      <p style="color:#888;font-size:0.8em;margin-top:-20px;">最美的相遇，不言过往；<br>最好的离别，不问归期。</p>
+    <div style="padding:0 40px 0 75px;color:#fff;">
+      <p>岁月如歌</p>
+      <p style="color:#888;font-size:0.8em;margin-top:-20px;">曾经以为淡忘的面孔，在相见的那一瞬间突然变得清晰起来。</p>
     </div>
     <div class="HolyGrail">
       <div class="HolyGrail-body">
