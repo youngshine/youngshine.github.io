@@ -212,7 +212,7 @@ new Vue({
   },
   template: `
   <div>
-    <Loading v-if="loading"></Loading>
+    <Loading v-show="loading"></Loading>
     <Header></Header>
     <List v-show="!loading"></List>"
   </div>  
@@ -221,7 +221,7 @@ new Vue({
     //document.querySelector("#loadingPage").remove()
     this.loading = false
     var imgs = document.querySelectorAll('img.child');
-    console.log(imgs)
+    console.log(this.loading)
     //this.checkImg(imgs) 
     //this.promiseImg(imgs) 
   },
