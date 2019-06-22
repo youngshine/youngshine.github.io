@@ -11,7 +11,7 @@ var Loading = {
 var Header = {
   template: `
   <div style="padding:0 15px 0 75px;color:#fff;">
-    <p>相逢的人会再相逢</p>
+    <p>相聚如歌、曲终难忘。</p>
     <p style="color:#888;font-size:0.8em;margin-top:-20px;">曾经以为淡忘的面孔，在相见那一瞬间变得清晰起来。</p>
   </div>
   `  
