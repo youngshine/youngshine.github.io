@@ -205,7 +205,7 @@ new Vue({
   el: '#app',
   data: {
     //Bus,
-    loading: true,
+    loading: false,
   },
   components: {
     Loading, Header, List
