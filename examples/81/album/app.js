@@ -243,6 +243,7 @@ new Vue({
       }
     },
     promiseImg(imgs){
+      var me = this;
       let promiseAll = [], img = [];
       for(let i = 0 ; i < imgs.length ; i++){
         promiseAll[i] = new Promise((resolve, reject)=>{
@@ -257,7 +258,7 @@ new Vue({
       }
       Promise.all(promiseAll).then((img)=>{
         //全部加载完成
-        this.loading = false;
+        me.loading = false;
         console.log('img all loaded by promise')
       })
     }
