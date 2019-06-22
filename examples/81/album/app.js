@@ -219,10 +219,10 @@ new Vue({
   `,
   mounted() {
     //document.querySelector("#loadingPage").remove()
-    //this.loading = false
+    this.loading = false
     var imgs = document.querySelectorAll('img.child');
     //this.checkImg(imgs) 
-    this.promiseImg(imgs) 
+    //this.promiseImg(imgs) 
   },
   methods: {
     checkImg(imgs){
