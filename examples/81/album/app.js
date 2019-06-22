@@ -221,6 +221,7 @@ new Vue({
     //document.querySelector("#loadingPage").remove()
     this.loading = false
     var imgs = document.querySelectorAll('img.child');
+    console.log(imgs)
     //this.checkImg(imgs) 
     //this.promiseImg(imgs) 
   },
