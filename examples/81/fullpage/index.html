@@ -26,16 +26,22 @@
         }
         /* loading图片居中  */
         #loadingImg {
-            /* 居中 */
+            /* 居中 
             position: absolute;
             margin: auto;
-            left: 0; right: 0; top: 0; bottom: 0; 
+            left: 0; right: 0; top: 0; bottom: 0; */
+            position: fixed; 
+            left: 50%;
+            margin-left: -25px;
+            top: 95%;
+            margin-top: -50px;
             width:50px;height:50px;
         }
         #loadingTxt {
-            position: relative;
-            top:40px; color:#fff;
+            color:#fff;
+            padding-top:50px;
         }
+        #loadingTxt li {list-style: none;}
 
         .fadeIn,#loadingPage {
             animation:fadein 5s linear 1;
@@ -149,13 +155,14 @@
             }
         }
         .start{
-            position: fixed;
+            position: fixed; 
             left: 50%;
             margin-left: -17px;
             top: 95%;
             margin-top: -34px;
             width: 34px;
             height: 34px;
+            display:none;
         }
         .start b{
             position: absolute;
@@ -187,6 +194,7 @@
         function removeLoading(){
             document.getElementById('loadingPage').style.display = "none"
             document.querySelector('.indicator').style.display = "block"
+            document.querySelector('.start').style.display = "block"
         }
     </script>
 </head>
@@ -223,7 +231,16 @@
         <div id="loadingPage">
             <img id="loadingImg" src="./images/loading.gif" />
             <!-- 相逢的人会再相逢 -->
-            <h3 id="loadingTxt">相逢的人会再相逢</h3>
+            <ul id="loadingTxt">
+                <li>相</li>
+                <li>逢</li>
+                <li>的</li>
+                <li>人</li>
+                <li>会</li>
+                <li>再</li>
+                <li>相</li>
+                <li>逢</li>
+            </ul>
         </div>
 
       <div id="fullpage">
