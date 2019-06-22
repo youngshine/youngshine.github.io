@@ -212,7 +212,7 @@ new Vue({
   },
   template: `
   <div>
-
+    <Loading v-show="loading"></Loading>
     <Header></Header>
     <List v-show="!loading"></List>"
   </div>  
