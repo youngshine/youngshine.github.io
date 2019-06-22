@@ -251,13 +251,14 @@ new Vue({
             img[i].onload = function(){
                   //第i张加载完成
                   resolve(img[i])
-                  //console.log(imgs[i]) //don't work
+                  console.log(imgs[i]) //don't work
             }
         })
       }
       Promise.all(promiseAll).then((img)=>{
         //全部加载完成
         this.loading = false;
+        console.log('img all loaded by promise')
       })
     }
   }
