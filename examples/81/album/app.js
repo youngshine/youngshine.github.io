@@ -3,24 +3,22 @@
 
 var Loading = {
   template: `
-  <sui-dimmer active>
-    <sui-loader>Loading...</sui-loader>
-  </sui-dimmer>
+  <div id="loadingPage">
+    <img id="loadingImg" src="./images/loading.gif" />
+  </div>
   `,
 }
-
-new Vue({
-  el: '#app',
-  mounted() {
-    document.querySelector("#loadingPage").remove()
-  },
-
+var Header = {
+  template: `
+  <div style="padding:0 15px 0 75px;color:#fff;">
+    <p>相逢的人会再相逢</p>
+    <p style="color:#888;font-size:0.8em;margin-top:-20px;">曾经以为淡忘的面孔，在相见那一瞬间变得清晰起来。</p>
+  </div>
+  `  
+}
+var List = {
   template: `
   <div @click="previewImg(event)">
-    <div style="padding:0 15px 0 75px;color:#fff;">
-      <p>似水年华</p>
-      <p style="color:#888;font-size:0.8em;margin-top:-20px;">曾经以为淡忘的面孔，在相见那一瞬间突然清晰起来。</p>
-    </div>
     <div class="HolyGrail">
       <div class="HolyGrail-body">
         <nav class="HolyGrail-nav">2015<br>福州<br>宁德</nav>
@@ -158,44 +156,91 @@ new Vue({
   </div>
   `,
   methods: {
-      previewImg(e){
-          console.log(e.target)
-          if(!e.target.src) return
-          var thumbUrl = e.target.src
-          var imgUrl = thumbUrl.replace('/thumb','');
-          var imgPath = thumbUrl.substr(0,thumbUrl.indexOf('thumb'))
-          //console.log(imgPath)
-          var arr = [];
-          arr.push(imgPath+'001.jpg')
-          arr.push(imgPath+'002.jpg')
-          arr.push(imgPath+'003.jpg')
-          arr.push(imgPath+'004.jpg')
-          arr.push(imgPath+'005.jpg')
-          arr.push(imgPath+'006.jpg')
-          arr.push(imgPath+'007.jpg')
-          arr.push(imgPath+'008.jpg')
-          arr.push(imgPath+'009.jpg')
-          arr.push(imgPath+'010.jpg')
-          arr.push(imgPath+'011.jpg')
-          arr.push(imgPath+'012.jpg')
-          arr.push(imgPath+'013.jpg')
-          arr.push(imgPath+'014.jpg')
-          arr.push(imgPath+'015.jpg')
-          arr.push(imgPath+'016.jpg')
-          arr.push(imgPath+'017.jpg')
-          arr.push(imgPath+'018.jpg')
-          console.log('current: ',imgUrl)
-          console.log('arr: ',arr) //[imgUrl]  
-          WeixinJSBridge.invoke('imagePreview', {  
-            'current' : imgUrl, 
-            'urls'    : arr  
-          })
-      }, /*
-      showDialog() {
-          this.$dialog({
-              title: "确定删除此订单？",
-              content: "删除后将从你的记录里消失，无法找回"
-          });
-      } */
+    previewImg(e){
+        console.log(e.target)
+        if(!e.target.src) return
+        var thumbUrl = e.target.src
+        var imgUrl = thumbUrl.replace('/thumb','');
+        var imgPath = thumbUrl.substr(0,thumbUrl.indexOf('thumb'))
+        //console.log(imgPath)
+        var arr = [];
+        arr.push(imgPath+'001.jpg')
+        arr.push(imgPath+'002.jpg')
+        arr.push(imgPath+'003.jpg')
+        arr.push(imgPath+'004.jpg')
+        arr.push(imgPath+'005.jpg')
+        arr.push(imgPath+'006.jpg')
+        arr.push(imgPath+'007.jpg')
+        arr.push(imgPath+'008.jpg')
+        arr.push(imgPath+'009.jpg')
+        arr.push(imgPath+'010.jpg')
+        arr.push(imgPath+'011.jpg')
+        arr.push(imgPath+'012.jpg')
+        arr.push(imgPath+'013.jpg')
+        arr.push(imgPath+'014.jpg')
+        arr.push(imgPath+'015.jpg')
+        arr.push(imgPath+'016.jpg')
+        arr.push(imgPath+'017.jpg')
+        arr.push(imgPath+'018.jpg')
+        console.log('current: ',imgUrl)
+        console.log('arr: ',arr) //[imgUrl]  
+        WeixinJSBridge.invoke('imagePreview', {  
+          'current' : imgUrl, 
+          'urls'    : arr  
+        })
+    }, /*
+    showDialog() {
+        this.$dialog({
+            title: "确定删除此订单？",
+            content: "删除后将从你的记录里消失，无法找回"
+        });
+    } */
   }
+}
+
+// 共享总线事件通信：Bus注入到Vue根对象中，子组件中通过this.$root.Bus.$on(),this.$root.Bus.$emit()来调用
+//const Bus = new Vue(); 
+
+new Vue({
+  el: '#app',
+  data: {
+    //Bus,
+    loading: true,
+  },
+  components: {
+    Loading, Header, List
+  },
+  template: `
+  <div>
+    <Loading v-if="loading"></Loading>
+    <Header></Header>
+    <List v-show="!loading"></List>"
+  </div>  
+  `,
+  mounted() {
+    //document.querySelector("#loadingPage").remove()
+    this.loading = false
+    var imgs = document.querySelectorAll('img.child');
+    //this.checkImg(imgs)  
+  },
+  methods: {
+    checkImg(imgs){
+      var img = [], flag = 0
+      for(var i = 0 ; i < imgs.length ; i++){ 
+        img[i] = new Image()   
+        img[i].src = imgs[i].src
+        img[i].onload = function(){ 
+          //第i张图片加载完成 
+          flag++ 
+          console.log(imgs[i]) //don't work
+          if( flag == imgs.length ){ 
+            //全部加载完成 
+            this.loading = false
+          } 
+        } 
+      }
+
+    }
+  }
+
 });
