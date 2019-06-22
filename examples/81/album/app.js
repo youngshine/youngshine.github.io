@@ -221,11 +221,12 @@ new Vue({
     //document.querySelector("#loadingPage").remove()
     //this.loading = false
     var imgs = document.querySelectorAll('img.child');
-    this.checkImg(imgs)  
+    //this.checkImg(imgs) 
+    this.promiseImg(imgs) 
   },
   methods: {
     checkImg(imgs){
-      var me = this;
+      var me = this
       var img = [], flag = 0
       for(var i = 0 ; i < imgs.length ; i++){ 
         img[i] = new Image()   
@@ -240,7 +241,24 @@ new Vue({
           } 
         } 
       }
-
+    },
+    promiseImg(imgs){
+      let promiseAll = [], img = [];
+      for(let i = 0 ; i < imgs.length ; i++){
+        promiseAll[i] = new Promise((resolve, reject)=>{
+            img[i] = new Image()
+            img[i].src = imgs[i].src
+            img[i].onload = function(){
+                  //第i张加载完成
+                  resolve(img[i])
+                  //console.log(imgs[i]) //don't work
+            }
+        })
+      }
+      Promise.all(promiseAll).then((img)=>{
+        //全部加载完成
+        this.loading = false;
+      })
     }
   }
 
