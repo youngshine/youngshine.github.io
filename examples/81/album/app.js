@@ -219,12 +219,13 @@ new Vue({
   `,
   mounted() {
     //document.querySelector("#loadingPage").remove()
-    this.loading = false
+    //this.loading = false
     var imgs = document.querySelectorAll('img.child');
-    //this.checkImg(imgs)  
+    this.checkImg(imgs)  
   },
   methods: {
     checkImg(imgs){
+      var me = this;
       var img = [], flag = 0
       for(var i = 0 ; i < imgs.length ; i++){ 
         img[i] = new Image()   
@@ -235,7 +236,7 @@ new Vue({
           console.log(imgs[i]) //don't work
           if( flag == imgs.length ){ 
             //全部加载完成 
-            this.loading = false
+            me.loading = false
           } 
         } 
       }
