@@ -47,6 +47,7 @@ function playbksound() {
   sound_div.innerHTML = bg_htm + box_htm + txt_htm,
   document.body.appendChild(sound_div)
   //setTimeout("popup_note()", 100)
+  document.getElementById('sound_image').style.display = "none"
 }
 var pop_up_note_mode, note_id, oDiv = document.createElement("div");
 oDiv.id = "audiocontainer",
