@@ -12,8 +12,8 @@
             -webkit-text-size-adjust:100%;
         }
         body{
-            line-height:1.6;
-            font-family:-apple-system-font, "Helvetica Neue", sans-serif;
+            /*line-height:1.6;
+            font-family:-apple-system-font, "Helvetica Neue", sans-serif; */
         }
         *{
             margin:0; padding:0;
@@ -26,22 +26,36 @@
         }
         /* loading图片居中  */
         #loadingImg {
-            /* 居中 
+            /* 居中  */
             position: absolute;
             margin: auto;
-            left: 0; right: 0; top: 0; bottom: 0; */
+            left: 0; right: 0; top: 0; bottom: 0; 
+            width:50px;height:50px;
+            /*
             position: fixed; 
             left: 50%;
             margin-left: -25px;
             top: 95%;
             margin-top: -50px;
-            width:50px;height:50px;
+            width:50px;height:50px; */
         }
         #loadingTxt {
-            color:#fff;
-            padding-top:30px;
+            color:#ccc;
+            padding-top:20px;display:none;
         }
-        #loadingTxt li {list-style: none;}
+        #loadingTxt li {
+            list-style: none;
+            line-height: 20px;
+        }
+        #mylogo {
+            position: fixed; 
+            left: 50%;
+            margin-left: -50px;
+            top: 95%;
+            margin-top: -50px;
+            width:100px;height:50px;
+            font-size:10px;color:#bbb;
+        }
 
         .fadeIn,#loadingPage {
             animation:fadein 5s linear 1;
@@ -68,7 +82,7 @@
             background:#de21c8;
         }
         .page h3{
-            line-height: 110px; font-size:18px;
+            line-height: 60px; font-size:18px;
         }
         .page img {
             width: 100%;
@@ -242,6 +256,7 @@
                 <li>相</li>
                 <li>逢</li>
             </ul>
+            <div id="mylogo">相逢的人会再相聚</div>
         </div>
 
       <div id="fullpage">
