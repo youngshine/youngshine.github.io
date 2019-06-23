@@ -220,10 +220,12 @@ new Vue({
   `,
   mounted() {
     //document.querySelector("#loadingPage").remove()
-    //this.loading = false
+    setTimeout(()=>{
+      this.loading = false
+    },3000)
     var imgs = document.querySelectorAll('img.child');
     console.log(this.loading)
-    this.checkImg(imgs) 
+    //this.checkImg(imgs) 
     //this.promiseImg(imgs) 
   },
   methods: {
