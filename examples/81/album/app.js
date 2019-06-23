@@ -4,6 +4,7 @@
 var Loading = {
   template: `
   <div id="loadingPage">
+    <div style="font-size:10px;color:#888;padding-top:20px;">期待2020再相聚</div>
     <img id="loadingImg" src="./images/loading.gif" />
   </div>
   `,
@@ -12,7 +13,7 @@ var Header = {
   template: `
   <div style="padding:0 15px 0 75px;color:#fff;">
     <p>相聚如歌，曲终难忘</p>
-    <p style="color:#888;font-size:0.8em;margin-top:-20px;">曾经以为淡忘的面孔，在相见那一瞬间变得清晰起来。</p>
+    <p style="color:#888;font-size:10px;margin-top:-20px;">曾经以为淡忘的面孔，在相见那一瞬间突然变得清晰起来。</p>
   </div>
   `  
 }
@@ -222,8 +223,8 @@ new Vue({
     //this.loading = false
     var imgs = document.querySelectorAll('img.child');
     console.log(this.loading)
-    //this.checkImg(imgs) 
-    this.promiseImg(imgs) 
+    this.checkImg(imgs) 
+    //this.promiseImg(imgs) 
   },
   methods: {
     checkImg(imgs){
@@ -238,7 +239,10 @@ new Vue({
           console.log(imgs[i]) //don't work
           if( flag == imgs.length ){ 
             //全部加载完成 
-            me.loading = false
+            setTimeout(()=>{
+              me.loading = false
+            },5000)
+            
           } 
         } 
       }
@@ -251,9 +255,9 @@ new Vue({
             img[i] = new Image()
             img[i].src = imgs[i].src
             img[i].onload = function(){
-                  //第i张加载完成
-                  resolve(img[i])
-                  console.log(imgs[i]) //don't work
+              //第i张加载完成
+              resolve(img[i])
+              console.log(imgs[i]) 
             }
         })
       }
