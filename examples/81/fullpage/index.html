@@ -12,8 +12,8 @@
             -webkit-text-size-adjust:100%;
         }
         body{
-            /*line-height:1.6;
-            font-family:-apple-system-font, "Helvetica Neue", sans-serif; */
+            line-height:1.6;
+            font-family:-apple-system-font, "Helvetica Neue", sans-serif; 
         }
         *{
             margin:0; padding:0;
@@ -82,8 +82,9 @@
             background:#de21c8;
         }
         .page header{
-            line-height: 60px; font-size:18px;
+             font-size:18px; padding-top:20px;
         }
+        .page span {font-size:10px;}
         .page img {
             width: 100%;
         }
@@ -185,7 +186,7 @@
             margin-left: -9px;
             width: 19px;
             height: 12px;
-            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAAYCAYAAAB9ejRwAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2RpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo3NEE1QzAwRjUwNUVFNDExQjUyN0I2QzNBRjZFQTlDRiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpBRkFBRkZBNTY5NzcxMUU0QjQ4RkMyMjdFRTY0MERCQiIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpBRkFBRkZBNDY5NzcxMUU0QjQ4RkMyMjdFRTY0MERCQiIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IFdpbmRvd3MiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo2NURGOEYwOEMyNjhFNDExQjM3NEZBQ0Q5QTM2MUEyMiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo3NEE1QzAwRjUwNUVFNDExQjUyN0I2QzNBRjZFQTlDRiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PoRMrLEAAADlSURBVHjazNddEYMwDADg4WBSkDAJkxAJk4ATpEzCJEwCEkJ6K0fXDZrfu+YubzT5epBeGRDx0l14oagOUC6UYxcoqvHAPewwK4rWz/gbNpgFdQCyw7SoBsgG06CYID1MihKCdDAuip67Ur5QheaderwYB+UAksFaKAEovdYxN7bBzlASULGGC7uJURqQEJYC2Khc9M0oOp1sVg+rUeZdetQqUZ4gU80NFQFSwxIqEqSCZRRnhO8O9y7OAC0bCkKuIPKj5tOr+KYgGtSA7b2q6YNo0AHsu9efcwqiQRXsWfcaevzFWgUYANEEcX5wqz+wAAAAAElFTkSuQmCC);
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAAYCAYAAAB9ejRwAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2RpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo3NEE1QzAwRjUwNUVFNDExQjUyN0I2QzNBRjZFQTlDRiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpBRkFBRkZBNTY5NzcxMUU0QjQ4RkMyMjdFRTY0MERCQiIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpBRkFBRkZBNDY5NzcxMUU0QjQ4RkMyMjdFRTY0MERCQiIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IFdpbmRvd3MiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo2NURGOEYwOEMyNjhFNDExQjM3NEZBQ0Q5QTM2MUEyMiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo3NEE1QzAwRjUwNUVFNDExQjUyN0I2QzNBRjZFQTlDRiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PoRMrLEAAADlSURBVHjazNddEYMwDADg4WBSkDAJkxAJk4ATpEzCJEwCEkJ6K0fXDZrfu+YubzT5epBeGRDx0l14oagOUC6UYxcoqvHAPewwK4rWz/gbNpgFdQCyw7SoBsgG06CYID1MihKCdDAuip67Ur5QH3wYB+UAksFaKAEovdYxN7bBzlASULGGC7uJURqQEJYC2Khc9M0oOp1sVg+rUeZdetQqUZ4gU80NFQFSwxIqEqSCZRRnhO8O9y7OAC0bCkKuIPKj5tOr+KYgGtSA7b2q6YNo0AHsu9efcwqiQRXsWfcaevzFWgUYANEEcX5wqz+wAAAAAElFTkSuQmCC);
             background-size: 100% 100%;
             -webkit-animation: start 1.5s infinite ease-in-out;
             animation: start 1.5s infinite ease-in-out;
@@ -245,131 +246,120 @@
     <div class="fullpage">
         <div id="loadingPage">
             <img id="loadingImg" src="./images/loading.gif" />
-            <!-- 相逢的人会再相逢 -->
-            <ul id="loadingTxt">
-                <li>相</li>
-                <li>逢</li>
-                <li>的</li>
-                <li>人</li>
-                <li>会</li>
-                <li>再</li>
-                <li>相</li>
-                <li>逢</li>
-            </ul>
             <div id="mylogo">相逢的人会再相聚</div>
         </div>
 
       <div id="fullpage">
-            <div class="page page30"><header>2019-06</header>
-                <img src='./images/20190612.jpg'> <span>宁德时代。</span>
+            <div class="page page30"><header>2019-06</header> <span>宁德时代。</span>
+                <img src='./images/20190612.jpg'> 
             </div>  
-            <div class="page page30"><header>2019-05</header>
-                <img src='./images/20190504.jpg'> <span>又一年春夏之交，春意带着些许萧瑟。</span>
+            <div class="page page30"><header>2019-05</header> <span>又一年春夏之交，春意渐浓。</span>
+                <img src='./images/20190504.jpg'> 
             </div>  
-            <div class="page page29"><header>2018-05</header>
-                <img src='./images/20180507.jpg'><span>教授带学生实习在福清，五月海风拂面。</span>
+            <div class="page page29"><header>2018-05</header> <span>教授带学生实习在福清，五月海风拂面。</span>
+                <img src='./images/20180507.jpg'>
             </div>  
-            <div class="page page29"><header>2018-03</header>
-                <img src='./images/20180321.jpg'> <span>武夷茶馆，一杯香茗、一份情谊、一段记忆。</span>
+            <div class="page page29"><header>2018-03</header> <span>武夷茶馆，一杯香茗、一份情谊、一段记忆。</span>
+                <img src='./images/20180321.jpg'> 
             </div> 
-            <div class="page page28"><header>2018-03</header>
-                <img src='./images/20180307.jpg'> <span>南平聚会酒，聊发少年狂。</span>
+            <div class="page page28"><header>2018-03</header> <span>南平同学招待建锵，开怀，聊发少年狂。</span>
+                <img src='./images/20180307.jpg'> 
             </div>
-            <div class="page page27"><header>2017-10</header>
-                <img src='./images/20171011.jpg'> <span>福州茶馆，茶香飘溢惹人醉。</span>
+            <div class="page page27"><header>2017-10</header> <span>福州茶馆，茶香飘溢惹人醉。</span>
+                <img src='./images/20171011.jpg'> 
             </div>
-            <div class="page page27"><header>2017-09</header>
-                <img src='./images/20170929.jpg'> <span>泉州石狮永宁卫，不醉不归啊。</span>
+            <div class="page page27"><header>2017-09</header> <span>泉州石狮永宁卫，余主席不醉不归啊。</span>
+                <img src='./images/20170929.jpg'> 
             </div>
-            <div class="page page26"><header>2017-02</header>
-                <img src='./images/20170215.jpg'> <span>都是农艺师，在仙游。</span>
+            <div class="page page26"><header>2017-02</header> <span>都是农艺师，在仙游。</span>
+                <img src='./images/20170215.jpg'> 
             </div> 
-            <div class="page page25"><header>2016-10</header>
-                <img src='./images/20161027.jpg'> <span>俩主席在泉州德化瓷都。</span>
+            <div class="page page25"><header>2016-10</header> <span>俩主席在泉州德化瓷都。</span>
+                <img src='./images/20161027.jpg'> 
             </div>
-            <div class="page page25"><header>2016-10</header>
-                <img src='./images/20161011.jpg'> <span>党代会，从一个胜利走向另一个胜利</span>
+            <div class="page page25"><header>2016-10</header> <span>党代会，从一个胜利走向另一个胜利</span>
+                <img src='./images/20161011.jpg'> 
             </div>
-            <div class="page page23"><header>2016-07</header>
-                <img src='./images/20160716.jpg'> <span>枫叶国，横跨太平洋的相逢，洋溢喜悦。</span>
+            <div class="page page23"><header>2016-07</header> <span>枫叶国，横跨太平洋的相逢，洋溢喜悦。</span>
+                <img src='./images/20160716.jpg'> 
             </div>
-            <div class="page page22"><header>2016-05</header>
-                <img src='./images/20160529.jpg'>  <span>资深女同学，姹紫嫣红。</span>
+            <div class="page page22"><header>2016-05</header> <span>资深女同学，姹紫嫣红。</span>
+                <img src='./images/20160529.jpg'>  
             </div>
-            <div class="page page21"><header>2016-03</header>
-                <img src='./images/20160323.jpg'> <span>武夷学院，应该是祝贺的酒。</span>
+            <div class="page page21"><header>2016-03</header> <span>武夷学院，应该是祝贺的酒。</span>
+                <img src='./images/20160323.jpg'> 
             </div>
-            <div class="page page20"><header>2016-02</header>
-                <img src='./images/20160212.jpg'> <span>又一年农场踏青，桃花依旧，男同学人到中年了。</span>
+            <div class="page page20"><header>2016-02</header> <span>再度农场踏青，桃花依旧。</span>
+                <img src='./images/20160212.jpg'> 
             </div> 
-            <div class="page page19"><header>2015-12</header>
-                <img src='./images/20151231.jpg'> <span>协会年会，致战斗在农业第一线同学。</span>
+            <div class="page page19"><header>2015-12</header> <span>协会年会，致敬在农业战线的同学。</span>
+                <img src='./images/20151231.jpg'> 
             </div>
-            <div class="page page18"><header>2015-08</header>
-                <img src='./images/20150817.jpg'> <span>邓平回国聚会，热烈都写在脸上。</span>
+            <div class="page page18"><header>2015-08</header> <span>邓平回国欢迎宴，热烈都写在脸上。</span>
+                <img src='./images/20150817.jpg'> 
             </div>
-            <div class="page page17"><header>2015-07</header> 
-                <img src='./images/20150725.jpg'> <span>平潭“失联”同学回来了。</span>
+            <div class="page page17"><header>2015-07</header> <span>平潭“失联”同学回来了。</span>
+                <img src='./images/20150725.jpg'> 
             </div>
-            <div class="page page16"><header>2015-03</header>
-                <img src='./images/20150331.jpg'> <span>貌似二战“三巨头”福州会议？</span>
+            <div class="page page16"><header>2015-03</header> <span>貌似二战“三巨头”福州会议？</span>
+                <img src='./images/20150331.jpg'> 
             </div> 
-            <div class="page page15"><header>2015-02</header>
-                <img src='./images/20150223.jpg'> <span>教授春节回三明，低调沉稳。</span>
+            <div class="page page15"><header>2015-02</header> <span>教授春节回三明，低调沉稳。</span>
+                <img src='./images/20150223.jpg'> 
             </div>
-            <div class="page page14"><header>2014-11</header>
-                <img src='./images/20141102.jpg'> <span>与院士老师一起，无拘无束。</span>
+            <div class="page page14"><header>2014-11</header> <span>与院士老师一起，就是无拘无束。</span>
+                <img src='./images/20141102.jpg'> 
             </div>
-            <div class="page page13"><header>2014-08</header>
-                <img src='./images/20140830.jpg'> <span>地方政府与母校专家，强强联合。</span>
+            <div class="page page13"><header>2014-08</header> <span>南平建瓯地方政府欢迎母校专家。</span>
+                <img src='./images/20140830.jpg'> 
             </div>
-            <div class="page page12"><header>2013</header>
-                <img src='./images/20130929.jpg'> <span>福州的又一次胜利聚餐。</span>
+            <div class="page page12"><header>2013</header> <span>福州的又一次胜利聚餐。</span>
+                <img src='./images/20130929.jpg'> 
             </div>
-            <div class="page page11"><header>2012-08</header>
-                <img src='./images/20120816.jpg'> <span>厦门同学与黄老师合影。</span>
+            <div class="page page11"><header>2012-08</header> <span>厦门同学与黄老师合影。</span>
+                <img src='./images/20120816.jpg'> 
             </div>
-            <div class="page page11"><header>2012-08</header>
-                <img src='./images/20120818.jpg'> <span>泉州湖美，哥仨好。</span>
+            <div class="page page11"><header>2012-08</header> <span>泉州湖美，哥仨好。</span>
+                <img src='./images/20120818.jpg'> 
             </div>
-            <div class="page page11"><header>2012-02</header>
-                <img src='./images/20120225.jpg'> <span>农场踏青之旅，人面桃花相映红。</span>
+            <div class="page page11"><header>2012-02</header> <span>农场踏青，人面桃花相映红。</span>
+                <img src='./images/20120225.jpg'> 
             </div>
-            <div class="page page10"><header>2011</header>
-                <img src='./images/20110303.jpg'> <span>红土地同学欢迎劳模。</span>
+            <div class="page page10"><header>2011</header> <span>红土地同学欢迎劳模。</span>
+                <img src='./images/20110303.jpg'> 
             </div> 
-            <div class="page page9"><header>2008</header>
-                <img src='./images/20081220.jpg'> <span>护“花”使者。</span>
+            <div class="page page9"><header>2008</header> <span>护“花”使者。</span>
+                <img src='./images/20081220.jpg'> 
             </div>
-            <div class="page page8"><header>2006</header>
-                <img src='./images/20060424.jpg'> <span>福州之家，在谁家呢？</span>
+            <div class="page page8"><header>2006</header> <span>福州之家，在谁家呢？</span>
+                <img src='./images/20060424.jpg'> 
             </div>
-            <div class="page page7"><header>2005</header>
-                <img src='./images/20050707.jpg'> <span>跨洋又跨国，相聚弥足珍贵。</span>
+            <div class="page page7"><header>2005</header> <span>跨洋又跨国，建栋回国相聚，弥足珍贵。</span>
+                <img src='./images/20050707.jpg'> 
             </div>
-            <div class="page page6"><header>2004</header>
-                <img src='./images/20040104.jpg'> <span>豪客来了，厦门同学接待教授。</span>
+            <div class="page page6"><header>2004</header> <span>豪客来了，厦门同学接待教授。</span>
+                <img src='./images/20040104.jpg'> 
             </div>
-            <div class="page page5"><header>2003-12</header>
-                <img src='./images/20031213.jpg'> <span>福州的一次胜利聚餐。</span>
+            <div class="page page5"><header>2003-12</header> <span>福州的一次胜利聚餐。</span>
+                <img src='./images/20031213.jpg'> 
             </div>
-            <div class="page page5"><header>2003-11</header>
-                <img src='./images/20031111.jpg'><span>青山为背景，凸显风华正茂。</span>
+            <div class="page page5"><header>2003-11</header> <span>青山为背景，凸显风华正茂。</span>
+                <img src='./images/20031111.jpg'>
             </div>
-            <div class="page page5"><header>2003-07</header>
-                <img src='./images/20030717.jpg'> <span>宁德的三都澳吗？</span>
+            <div class="page page5"><header>2003-07</header> <span>宁德的三都澳吗？</span>
+                <img src='./images/20030717.jpg'> 
             </div>
-            <div class="page page4"><header>2002</header>
-                <img src='./images/20021002.jpg'><span>泉州清源山留影，“老子”见证。</span>
+            <div class="page page4"><header>2002</header> <span>泉州清源山留影，“老子”见证。</span>
+                <img src='./images/20021002.jpg'>
             </div>
-            <div class="page page3"><header>1997</header>
-                <img src='./images/19970129.jpg'><span>即将远行，总是让人留念。</span>
+            <div class="page page3"><header>1997</header> <span>即将远行，总是让人留念。</span>
+                <img src='./images/19970129.jpg'>
             </div>
-            <div class="page page2"><header>1986</header>
-                <img src='./images/19860506.jpg'> <span>毕业一年，依旧青葱岁月。</span>
+            <div class="page page2"><header>1986</header> <span>毕业一年，依旧青葱岁月。</span>
+                <img src='./images/19860506.jpg'> 
             </div>
-            <div class="page page1"><header>1985</header>
-                <img src='./images/19851005.jpg'><span>上世纪那个秋高气爽的日子，母校校园。<br>终点，也是起点。</span>
+            <div class="page page1"><header>1985</header> <span>起点，上世纪那个秋高气爽的日子，母校校园。</span>
+                <img src='./images/19851005.jpg'>
             </div>
       </div>
 
