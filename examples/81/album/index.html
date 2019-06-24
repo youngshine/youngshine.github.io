@@ -94,27 +94,23 @@
 
   <script src="./echo.min.js"></script>
   <script>
-      echo.init({
-        offset: 100,
-        throttle: 250
-      });
-
       window.onload = lazyload
+      //window.onload = previewImgByWx
 
       function lazyload(){
-          var imgs = document.querySelectorAll('img.lazy')
-          console.log(imgs)
-          imgs.forEach(function(img,i){
-              img.src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC'
-          })
+        var imgs = document.querySelectorAll('img.lazy')
+        console.log(imgs)
+        imgs.forEach(function(img,i){
+            img.src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC'
+        })
 
-          document.querySelector('.qz2010').innerHTML = '2010<br>泉州'
-          document.querySelector('.np2005').innerHTML = '2005<br>武夷山'
-          document.querySelector('.xm2000').innerHTML = '2000<br>厦门'
-          document.querySelector('.fz1995').innerHTML = '1995<br>福州'
+        document.querySelector('.qz2010').innerHTML = '2010<br>泉州'
+        document.querySelector('.np2005').innerHTML = '2005<br>武夷山'
+        document.querySelector('.xm2000').innerHTML = '2000<br>厦门'
+        document.querySelector('.fz1995').innerHTML = '1995<br>福州'
       }
 
-      /* 微信浏览器内点击放大图片 */
+      /* 微信浏览器内点击放大并滑动浏览图片 */
       document.addEventListener('click',function(e){
         console.log(e.target)
         if(!e.target.src) return
@@ -149,6 +145,10 @@
         });
       }) 
 
+      echo.init({
+        offset: 100,
+        throttle: 250
+      });
 
   </script>
   <script>
