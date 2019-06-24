@@ -92,8 +92,8 @@
       }  /* lazy ends */
     </style>
 
-  <script src="./src/echo.min.js"></script>
   <script src="./src/zepto.min.js"></script>
+  <script src="./src/echo.min.js"></script>
   <script>
     echo.init({
       offset: 100,
@@ -136,6 +136,7 @@
 <body ontouchstart>
   <div style="padding:0 15px 0 75px;color:#fff;">
     <p class="title"></p>
+    <p class="subtitle" style="color:#999;font-size:10px;margin-top:-20px;"></p>
     <!-- 
     <p style="color:#999;font-size:10px;margin-top:-20px;">曾经以为淡忘的面孔，在相见那一瞬间突然变得清晰起来。</p> -->
   </div>
@@ -287,9 +288,10 @@
       -->
  
     <script>
-      // zepto.js，ios才能够点击放大图片？微信浏览器内点击放大图片
+      // zepto.js，ios才能够点击放大图片？微信浏览器内点击放大图片 
       $(function(){
         $('.title').html('相聚如歌，曲终难忘')
+        $('.subtitle').html('曾经以为淡忘的面孔，在相见那一瞬间突然变得清晰起来。')
         $('.fz2015').html('2015<br>福州<br>宁德')
         $('.qz2010').html('2010<br>泉州')
         $('.np2005').html('2005<br>武夷山')
