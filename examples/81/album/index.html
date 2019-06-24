@@ -94,8 +94,11 @@
 
   <script src="./src/echo.min.js"></script>
   <script src="./src/zepto.min.js"></script>
-
   <script>
+    echo.init({
+      offset: 100,
+      throttle: 250
+    }); 
     /*图片加载成功时触发load事件，失败不会触发
     document.addEventListener("load", function (event) {
       var ev = event ? event : window.event;
@@ -112,7 +115,7 @@
     function removeLoading(){
       //document.getElementById('loadingPage').style.display = "none"
     } */
-
+    /*
     window.onload = lazyload
 
     function lazyload(){
@@ -126,17 +129,13 @@
       document.querySelector('.xm2000').innerHTML = '2000<br>厦门'
       document.querySelector('.fz1995').innerHTML = '1995<br>福州'
     }
-
-    echo.init({
-      offset: 100,
-      throttle: 250
-    });
+    */
   </script>
 </head>
 
 <body ontouchstart>
   <div style="padding:0 15px 0 75px;color:#fff;">
-    <p>相聚如歌，曲终难忘</p>
+    <p class="title"></p>
     <!-- 
     <p style="color:#999;font-size:10px;margin-top:-20px;">曾经以为淡忘的面孔，在相见那一瞬间突然变得清晰起来。</p> -->
   </div>
@@ -145,7 +144,7 @@
   <div>
     <div class="HolyGrail">
       <div class="HolyGrail-body">
-        <nav class="HolyGrail-nav fz2015">2015<br>福州<br>宁德</nav>
+        <nav class="HolyGrail-nav fz2015"></nav>
         <main class="parent HolyGrail-content">
           <img class="child lazy" data-echo="./images/2015/thumb/001.jpg" />
           <img class="child lazy" data-echo="./images/2015/thumb/002.jpg" />
@@ -290,6 +289,15 @@
     <script>
       // zepto.js，ios才能够点击放大图片？微信浏览器内点击放大图片
       $(function(){
+        $('.title').html('相聚如歌，曲终难忘')
+        $('.fz2015').html('2015<br>福州<br>宁德')
+        $('.qz2010').html('2010<br>泉州')
+        $('.np2005').html('2005<br>武夷山')
+        $('.xm2000').html('2000<br>厦门')
+        $('.fz1995').html('1995<br>福州')
+
+        $("img.child").attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC');//此处可改为具体懒加载图片
+        // 微信浏览器内点击放大图片
         $('img.child').on('click',function(e){
           console.log(e.target)
           var thumbUrl = e.target.src
