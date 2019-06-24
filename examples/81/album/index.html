@@ -93,97 +93,7 @@
     </style>
 
   <script src="./echo.min.js"></script>
-  <script>
-      window.onload = lazyload
-      //window.onload = previewImgByWx
 
-      function lazyload(){
-        var imgs = document.querySelectorAll('img.lazy')
-        imgs.forEach(function(img,i){
-            img.src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC'
-        })
-
-        document.querySelector('.qz2010').innerHTML = '2010<br>泉州'
-        document.querySelector('.np2005').innerHTML = '2005<br>武夷山'
-        document.querySelector('.xm2000').innerHTML = '2000<br>厦门'
-        document.querySelector('.fz1995').innerHTML = '1995<br>福州'
-
-        document.addEventListener('click',function(e){
-          console.log('img: ',e.target.src)
-          var thumbUrl = e.target.src
-          var imgUrl = thumbUrl.replace('/thumb','');
-          var imgPath = thumbUrl.substr(0,thumbUrl.indexOf('thumb'))
-          //console.log(imgPath)
-          var arr = [];
-          arr.push(imgPath+'001.jpg')
-          arr.push(imgPath+'002.jpg')
-          arr.push(imgPath+'003.jpg')
-          arr.push(imgPath+'004.jpg')
-          arr.push(imgPath+'005.jpg')
-          arr.push(imgPath+'006.jpg')
-          arr.push(imgPath+'007.jpg')
-          arr.push(imgPath+'008.jpg')
-          arr.push(imgPath+'009.jpg')
-          arr.push(imgPath+'010.jpg')
-          arr.push(imgPath+'011.jpg')
-          arr.push(imgPath+'012.jpg')
-          arr.push(imgPath+'013.jpg')
-          arr.push(imgPath+'014.jpg')
-          arr.push(imgPath+'015.jpg')
-          arr.push(imgPath+'016.jpg')
-          arr.push(imgPath+'017.jpg')
-          arr.push(imgPath+'018.jpg')
-          console.log('current: ',imgUrl)
-          console.log('arr: ',arr) //[imgUrl]  
-          WeixinJSBridge.invoke('imagePreview', {  
-            'current' : imgUrl,  
-            'urls'    : arr 
-          });
-        },true)
-        
-      }
-
-      /* 微信浏览器内点击放大并滑动浏览图片 
-      document.addEventListener('click',function(e){
-        console.log(e.target)
-        if(!e.target.src) return
-        var thumbUrl = e.target.src
-        var imgUrl = thumbUrl.replace('/thumb','');
-        var imgPath = thumbUrl.substr(0,thumbUrl.indexOf('thumb'))
-        //console.log(imgPath)
-        var arr = [];
-        arr.push(imgPath+'001.jpg')
-        arr.push(imgPath+'002.jpg')
-        arr.push(imgPath+'003.jpg')
-        arr.push(imgPath+'004.jpg')
-        arr.push(imgPath+'005.jpg')
-        arr.push(imgPath+'006.jpg')
-        arr.push(imgPath+'007.jpg')
-        arr.push(imgPath+'008.jpg')
-        arr.push(imgPath+'009.jpg')
-        arr.push(imgPath+'010.jpg')
-        arr.push(imgPath+'011.jpg')
-        arr.push(imgPath+'012.jpg')
-        arr.push(imgPath+'013.jpg')
-        arr.push(imgPath+'014.jpg')
-        arr.push(imgPath+'015.jpg')
-        arr.push(imgPath+'016.jpg')
-        arr.push(imgPath+'017.jpg')
-        arr.push(imgPath+'018.jpg')
-        console.log('current: ',imgUrl)
-        console.log('arr: ',arr) //[imgUrl]  
-        WeixinJSBridge.invoke('imagePreview', {  
-          'current' : imgUrl,  
-          'urls'    : arr 
-        });
-      }) */
-
-      echo.init({
-        offset: 100,
-        throttle: 250
-      });
-
-  </script>
   <script>
     /*图片加载成功时触发load事件，失败不会触发
     document.addEventListener("load", function (event) {
@@ -202,6 +112,24 @@
       //document.getElementById('loadingPage').style.display = "none"
     } */
 
+    window.onload = lazyload
+
+    function lazyload(){
+      var imgs = document.querySelectorAll('img.lazy')
+      imgs.forEach(function(img,i){
+          img.src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC'
+      })
+
+      document.querySelector('.qz2010').innerHTML = '2010<br>泉州'
+      document.querySelector('.np2005').innerHTML = '2005<br>武夷山'
+      document.querySelector('.xm2000').innerHTML = '2000<br>厦门'
+      document.querySelector('.fz1995').innerHTML = '1995<br>福州'
+    }
+
+    echo.init({
+      offset: 100,
+      throttle: 250
+    });
   </script>
 </head>
 
@@ -359,50 +287,41 @@
       -->
  
     <script>
-      /*
-      window.onload = function (){
-          var imgs = document.querySelectorAll('img.lazy')
-          console.log(imgs)
-          imgs.forEach(function(img,i){
-              img.src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC'
-          })
-      }
-      echo.init({
-          offset: 100,
-          throttle: 250
-      }); */
-      function getOffsetByBody(el) {
-        let offsetTop = 0
-        while(el && el.tagName !== 'BODY') {
-          offsetTop += el.offsetTop
-          el = el.offsetParent
-        }
-        return offsetTop
-      }
-      function lazyload() {
-        var imgs = document.querySelectorAll('img.child') //document.getElementsByClassName('child')
-        console.log(imgs)
-        imgs.forEach(function(img,i){
-            img.src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC'
-        })
-        return
-        let availHeight = window.screen.availHeight // 浏览器可用部分高度
-        let scrollTop = document.body.scrollTop || document.documentElement.scrollTop // 滚动隐藏的高度
-        for(let i = 0; i < imgs.length; i++) {
-          let offsetTop = getOffsetByBody(imgs[i])
-          if(offsetTop - scrollTop < availHeight) {  // 判断条件，元素是否出现在用户视野内
-            let src = imgs[i].getAttribute('data-src') // 获取真实地址
-            if(src) { // 如果获取到了 data-src 说明图片是第一次出现在视野内
-              imgs[i].setAttribute('src', src) // 将真实地址赋给图片的src属性
-              imgs[i].removeAttribute('data-src') // 移除data-src
-            }
-          }
-        }
-      }
+        /* 微信浏览器内点击放大并滑动浏览图片 */
+        document.addEventListener('click',function(e){
+          console.log(e.target)
+          if(!e.target.src) return
+          var thumbUrl = e.target.src
+          var imgUrl = thumbUrl.replace('/thumb','');
+          var imgPath = thumbUrl.substr(0,thumbUrl.indexOf('thumb'))
+          //console.log(imgPath)
+          var arr = [];
+          arr.push(imgPath+'001.jpg')
+          arr.push(imgPath+'002.jpg')
+          arr.push(imgPath+'003.jpg')
+          arr.push(imgPath+'004.jpg')
+          arr.push(imgPath+'005.jpg')
+          arr.push(imgPath+'006.jpg')
+          arr.push(imgPath+'007.jpg')
+          arr.push(imgPath+'008.jpg')
+          arr.push(imgPath+'009.jpg')
+          arr.push(imgPath+'010.jpg')
+          arr.push(imgPath+'011.jpg')
+          arr.push(imgPath+'012.jpg')
+          arr.push(imgPath+'013.jpg')
+          arr.push(imgPath+'014.jpg')
+          arr.push(imgPath+'015.jpg')
+          arr.push(imgPath+'016.jpg')
+          arr.push(imgPath+'017.jpg')
+          arr.push(imgPath+'018.jpg')
+          console.log('current: ',imgUrl)
+          console.log('arr: ',arr) //[imgUrl]  
+          WeixinJSBridge.invoke('imagePreview', {  
+            'current' : imgUrl,  
+            'urls'    : arr 
+          });
+        }) 
   
-      //window.onload = lazyload // 页面加载执行 lazyload
-      //window.onscroll = lazyload // 监听滚动事件，滚动时执行lazyload
-  
-    </script>     
+    </script> 
 </body>
 </html>
