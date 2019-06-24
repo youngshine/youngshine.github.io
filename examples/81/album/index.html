@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@nutui/nutui@2.1.2/dist/nutui.min.css">  -->
     <style>
       body {
-        background:#333;
+        background:#333; max-width:600px;
       }
       /* loading文字 */
       #loadingPage {
@@ -46,17 +46,16 @@
       
       .HolyGrail-nav  {
         /* 两个边栏的宽度设为12em */
-        width: 65px;
+        width: 60px;
         color: #fff;
         padding: 0 5px;
-        font-size: 0.8em;
+        font-size: 12px;
       }
       
       .HolyGrail-nav {
         /* 导航放到最左边 */
         order: -1;
       }
-
 
       .parent {
         width: 100%;
@@ -66,18 +65,55 @@
         flex-flow: row wrap;
         align-content: flex-start; 
       }
-      
       .child {
         box-sizing: border-box;
         /* background-color: white; */
         /* flex: 0 0 25%; */
         /*width: 80px; height:80px;*/
         width: 33%;height:33%;
+        max-height:33%;vertical-align:top;
         border: 2px solid #333;
       }
 
+      /*  lazy load img */
+      .weui-media-box_appmsg{
+        display:-webkit-box;
+        display:-webkit-flex;
+        display:flex;
+        -webkit-box-align:center;
+        -webkit-align-items:center;
+                align-items:center;
+      }
+      .weui-media-box_appmsg .weui-media-box__thumb{
+          /*
+          width:100%;
+          max-height:100%;
+          vertical-align:top; */
+      }  /* lazy ends */
     </style>
 
+  <script src="./echo.min.js"></script>
+  <script>
+      window.onload = lazyload
+
+      function lazyload(){
+          var imgs = document.querySelectorAll('img.lazy')
+          console.log(imgs)
+          imgs.forEach(function(img,i){
+              img.src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC'
+          })
+
+          document.querySelector('.qz2010').innerHTML = '2010<br>泉州'
+          document.querySelector('.np2005').innerHTML = '2005<br>武夷山'
+          document.querySelector('.xm2000').innerHTML = '2000<br>厦门'
+          document.querySelector('.fz1995').innerHTML = '1995<br>福州'
+      }
+
+      echo.init({
+          offset: 100,
+          throttle: 250
+      });
+  </script>
   <script>
     /*图片加载成功时触发load事件，失败不会触发
     document.addEventListener("load", function (event) {
@@ -133,15 +169,204 @@
     })  */
   </script>
 </head>
-<body>
-    <div id="app"></div>
 
-    <!-- 引入Vue -->
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+<body>
+  <div style="padding:0 15px 0 75px;color:#fff;">
+    <p>相聚如歌，曲终难忘</p>
+    <p style="color:#888;font-size:10px;margin-top:-20px;">曾经以为淡忘的面孔，在相见那一瞬间突然变得清晰起来。</p>
+  </div>
+
+    
+  <div @click="previewImg(event)">
+    <div class="HolyGrail">
+      <div class="HolyGrail-body">
+        <nav class="HolyGrail-nav fz2015">2015<br>福州<br>宁德</nav>
+        <main class="parent HolyGrail-content">
+          <img class="child lazy" data-echo="./images/2015/thumb/001.jpg" />
+          <img class="child lazy" data-echo="./images/2015/thumb/002.jpg" />
+          <img class="child lazy" data-echo="./images/2015/thumb/003.jpg" />
+          <img class="child lazy" data-echo="./images/2015/thumb/004.jpg" />
+          <img class="child lazy" data-echo="./images/2015/thumb/005.jpg" />
+          <img class="child lazy" data-echo="./images/2015/thumb/006.jpg" />
+          <img class="child lazy" data-echo="./images/2015/thumb/007.jpg" />
+          <img class="child lazy" data-echo="./images/2015/thumb/008.jpg" />
+          <img class="child lazy" data-echo="./images/2015/thumb/009.jpg" />
+          <img class="child lazy" data-echo="./images/2015/thumb/010.jpg" />
+          <img class="child lazy" data-echo="./images/2015/thumb/011.jpg" />
+          <img class="child lazy" data-echo="./images/2015/thumb/012.jpg" />
+          <img class="child lazy" data-echo="./images/2015/thumb/013.jpg" />
+          <img class="child lazy" data-echo="./images/2015/thumb/014.jpg" />
+          <img class="child lazy" data-echo="./images/2015/thumb/015.jpg" />
+          <img class="child lazy" data-echo="./images/2015/thumb/016.jpg" />
+          <img class="child lazy" data-echo="./images/2015/thumb/017.jpg" />
+          <img class="child lazy" data-echo="./images/2015/thumb/018.jpg" />
+        </main>
+      </div>
+    </div>
+
+    <br>
+    <div class="HolyGrail">
+      <div class="HolyGrail-body">
+        <nav class="HolyGrail-nav qz2010"></nav>
+        <main class="parent HolyGrail-content">
+          <img class="child lazy" data-echo="./images/2010/thumb/001.jpg" />
+          <img class="child lazy" data-echo="./images/2010/thumb/002.jpg" />
+          <img class="child lazy" data-echo="./images/2010/thumb/003.jpg" />
+          <img class="child lazy" data-echo="./images/2010/thumb/004.jpg" />
+          <img class="child lazy" data-echo="./images/2010/thumb/005.jpg" />
+          <img class="child lazy" data-echo="./images/2010/thumb/006.jpg" />
+          <img class="child lazy" data-echo="./images/2010/thumb/007.jpg" />
+          <img class="child lazy" data-echo="./images/2010/thumb/008.jpg" />
+          <img class="child lazy" data-echo="./images/2010/thumb/009.jpg" />
+          <img class="child lazy" data-echo="./images/2010/thumb/010.jpg" />
+          <img class="child lazy" data-echo="./images/2010/thumb/011.jpg" />
+          <img class="child lazy" data-echo="./images/2010/thumb/012.jpg" />
+          <img class="child lazy" data-echo="./images/2010/thumb/013.jpg" />
+          <img class="child lazy" data-echo="./images/2010/thumb/014.jpg" />
+          <img class="child lazy" data-echo="./images/2010/thumb/015.jpg" />
+          <img class="child lazy" data-echo="./images/2010/thumb/016.jpg" />
+          <img class="child lazy" data-echo="./images/2010/thumb/017.jpg" />
+          <img class="child lazy" data-echo="./images/2010/thumb/018.jpg" />
+        </main>
+      </div>
+    </div>
+
+    <br>
+    <div class="HolyGrail">
+      <div class="HolyGrail-body">
+        <nav class="HolyGrail-nav np2005"></nav>
+        <main class="parent HolyGrail-content">
+          <img class="child lazy" data-echo="./images/2005/thumb/001.jpg" />
+          <img class="child lazy" data-echo="./images/2005/thumb/002.jpg" />
+          <img class="child lazy" data-echo="./images/2005/thumb/003.jpg" />
+          <img class="child lazy" data-echo="./images/2005/thumb/004.jpg" />
+          <img class="child lazy" data-echo="./images/2005/thumb/005.jpg" />
+          <img class="child lazy" data-echo="./images/2005/thumb/006.jpg" />
+          <img class="child lazy" data-echo="./images/2005/thumb/007.jpg" />
+          <img class="child lazy" data-echo="./images/2005/thumb/008.jpg" />
+          <img class="child lazy" data-echo="./images/2005/thumb/009.jpg" />
+          <img class="child lazy" data-echo="./images/2005/thumb/010.jpg" />
+          <img class="child lazy" data-echo="./images/2005/thumb/011.jpg" />
+          <img class="child lazy" data-echo="./images/2005/thumb/012.jpg" />
+          <img class="child lazy" data-echo="./images/2005/thumb/013.jpg" />
+          <img class="child lazy" data-echo="./images/2005/thumb/014.jpg" />
+          <img class="child lazy" data-echo="./images/2005/thumb/015.jpg" />
+          <img class="child lazy" data-echo="./images/2005/thumb/016.jpg" />
+          <img class="child lazy" data-echo="./images/2005/thumb/017.jpg" />
+          <img class="child lazy" data-echo="./images/2005/thumb/018.jpg" />
+        </main>
+      </div>
+    </div>
+
+    <br>
+    <div class="HolyGrail">
+      <div class="HolyGrail-body">
+        <nav class="HolyGrail-nav xm2000"></nav>
+        <main class="parent HolyGrail-content">
+          <img class="child lazy" data-echo="./images/2000/thumb/001.jpg" />
+          <img class="child lazy" data-echo="./images/2000/thumb/002.jpg" />
+          <img class="child lazy" data-echo="./images/2000/thumb/003.jpg" />
+          <img class="child lazy" data-echo="./images/2000/thumb/004.jpg" />
+          <img class="child lazy" data-echo="./images/2000/thumb/005.jpg" />
+          <img class="child lazy" data-echo="./images/2000/thumb/006.jpg" />
+          <img class="child lazy" data-echo="./images/2000/thumb/007.jpg" />
+          <img class="child lazy" data-echo="./images/2000/thumb/008.jpg" />
+          <img class="child lazy" data-echo="./images/2000/thumb/009.jpg" />
+          <img class="child lazy" data-echo="./images/2000/thumb/010.jpg" />
+          <img class="child lazy" data-echo="./images/2000/thumb/011.jpg" />
+          <img class="child lazy" data-echo="./images/2000/thumb/012.jpg" />
+          <img class="child lazy" data-echo="./images/2000/thumb/013.jpg" />
+          <img class="child lazy" data-echo="./images/2000/thumb/014.jpg" />
+          <img class="child lazy" data-echo="./images/2000/thumb/015.jpg" />
+          <img class="child lazy" data-echo="./images/2000/thumb/016.jpg" />
+          <img class="child lazy" data-echo="./images/2000/thumb/017.jpg" />
+          <img class="child lazy" data-echo="./images/2000/thumb/018.jpg" />
+        </main>
+      </div>
+    </div>
+
+    <br>
+    <div class="HolyGrail">
+      <div class="HolyGrail-body">
+        <nav class="HolyGrail-nav fz1995"></nav>
+        <main class="parent HolyGrail-content">
+          <img class="child lazy" data-echo="./images/1995/thumb/001.jpg" />
+          <img class="child lazy" data-echo="./images/1995/thumb/002.jpg" />
+          <img class="child lazy" data-echo="./images/1995/thumb/003.jpg" />
+          <img class="child lazy" data-echo="./images/1995/thumb/004.jpg" />
+          <img class="child lazy" data-echo="./images/1995/thumb/005.jpg" />
+          <img class="child lazy" data-echo="./images/1995/thumb/006.jpg" />
+          <img class="child lazy" data-echo="./images/1995/thumb/007.jpg" />
+          <img class="child lazy" data-echo="./images/1995/thumb/008.jpg" />
+          <img class="child lazy" data-echo="./images/1995/thumb/009.jpg" />
+          <img class="child lazy" data-echo="./images/1995/thumb/010.jpg" />
+          <img class="child lazy" data-echo="./images/1995/thumb/011.jpg" />
+          <img class="child lazy" data-echo="./images/1995/thumb/012.jpg" />
+          <img class="child lazy" data-echo="./images/1995/thumb/013.jpg" />
+          <img class="child lazy" data-echo="./images/1995/thumb/014.jpg" />
+          <img class="child lazy" data-echo="./images/1995/thumb/015.jpg" />
+          <img class="child lazy" data-echo="./images/1995/thumb/016.jpg" />
+          <img class="child lazy" data-echo="./images/1995/thumb/017.jpg" />
+          <img class="child lazy" data-echo="./images/1995/thumb/018.jpg" />
+        </main>
+      </div>
+    </div>
+
+  </div>
+
+    <!-- 引入Vue
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script> -->
     <!-- 引入NutUI组件库 jd.com
     <script src="https://cdn.jsdelivr.net/npm/@nutui/nutui@2.1.2/dist/nutui.min.js"></script>
-    -->
+    
     <script src="app.js"></script>
-
+      -->
+ 
+    <script>
+      /*
+      window.onload = function (){
+          var imgs = document.querySelectorAll('img.lazy')
+          console.log(imgs)
+          imgs.forEach(function(img,i){
+              img.src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC'
+          })
+      }
+      echo.init({
+          offset: 100,
+          throttle: 250
+      }); */
+      function getOffsetByBody(el) {
+        let offsetTop = 0
+        while(el && el.tagName !== 'BODY') {
+          offsetTop += el.offsetTop
+          el = el.offsetParent
+        }
+        return offsetTop
+      }
+      function lazyload() {
+        var imgs = document.querySelectorAll('img.child') //document.getElementsByClassName('child')
+        console.log(imgs)
+        imgs.forEach(function(img,i){
+            img.src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC'
+        })
+        return
+        let availHeight = window.screen.availHeight // 浏览器可用部分高度
+        let scrollTop = document.body.scrollTop || document.documentElement.scrollTop // 滚动隐藏的高度
+        for(let i = 0; i < imgs.length; i++) {
+          let offsetTop = getOffsetByBody(imgs[i])
+          if(offsetTop - scrollTop < availHeight) {  // 判断条件，元素是否出现在用户视野内
+            let src = imgs[i].getAttribute('data-src') // 获取真实地址
+            if(src) { // 如果获取到了 data-src 说明图片是第一次出现在视野内
+              imgs[i].setAttribute('src', src) // 将真实地址赋给图片的src属性
+              imgs[i].removeAttribute('data-src') // 移除data-src
+            }
+          }
+        }
+      }
+  
+      //window.onload = lazyload // 页面加载执行 lazyload
+      //window.onscroll = lazyload // 监听滚动事件，滚动时执行lazyload
+  
+    </script>     
 </body>
 </html>
