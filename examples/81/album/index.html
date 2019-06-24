@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@nutui/nutui@2.1.2/dist/nutui.min.css">  -->
     <style>
       body {
-        background:#333; max-width:600px;
+        background:#333; max-width:600px; /*手机屏幕竖向portrait最宽*/
       }
       /* loading文字 */
       #loadingPage {
@@ -172,13 +172,14 @@
   </script>
 </head>
 
-<body>
+<body ontouchstart>
   <div style="padding:0 15px 0 75px;color:#fff;">
     <p>相聚如歌，曲终难忘</p>
-    <p style="color:#999;font-size:10px;margin-top:-20px;">曾经以为淡忘的面孔，在相见那一瞬间突然变得清晰起来。</p>
+    <!-- 
+    <p style="color:#999;font-size:10px;margin-top:-20px;">曾经以为淡忘的面孔，在相见那一瞬间突然变得清晰起来。</p> -->
   </div>
 
-  <hr />    
+
   <div>
     <div class="HolyGrail">
       <div class="HolyGrail-body">
