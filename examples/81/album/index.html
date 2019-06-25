@@ -134,9 +134,11 @@
 </head>
 
 <body ontouchstart>
-  <div style="padding:0 15px 15px 75px;color:#fff;">
-    <p class="title"></p>
-    <p class="subtitle" style="color:#999;font-size:10px;margin-top:-20px;"></p>
+  <div style="padding:0 15px 15px 75px;color:#fff;display:none;" class="header">
+    <p class="title">相聚如歌，曲终难忘</p>
+    <p class="subtitle" style="color:#999;font-size:10px;margin-top:-20px;">
+      曾经以为淡忘的面孔，在相见那一瞬间突然变得清晰起来。
+    </p>
     <!-- 
     <p style="color:#999;font-size:10px;margin-top:-20px;">曾经以为淡忘的面孔，在相见那一瞬间突然变得清晰起来。</p> -->
   </div>
@@ -279,6 +281,10 @@
 
   </div>
 
+  <div class="footer" style="color:#555;font-size:10px;padding-left:75px;display:none;">
+    <p>@光线软件</p>
+  </div>
+
     <!-- 引入Vue
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script> -->
     <!-- 引入NutUI组件库 jd.com
@@ -290,8 +296,9 @@
     <script>
       // zepto.js，ios才能够点击放大图片？微信浏览器内点击放大图片 
       $(function(){
-        $('.title').html('相聚如歌，曲终难忘')
-        $('.subtitle').html('曾经以为淡忘的面孔，在相见那一瞬间突然变得清晰起来。')
+        $('.header').show();
+        $('.footer').show();
+        //$('.subtitle').show() //.html('曾经以为淡忘的面孔，在相见那一瞬间突然变得清晰起来。')
         $('.fz2015').html('2015<br>福州<br>宁德')
         $('.qz2010').html('2010<br>泉州')
         $('.np2005').html('2005<br>武夷山')
@@ -299,6 +306,7 @@
         $('.fz1995').html('1995<br>福州')
 
         $("img.child").attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC');//此处可改为具体懒加载图片
+        
         // 微信浏览器内点击放大图片
         $('img.child').on('click',function(e){
           console.log(e.target)
