@@ -329,6 +329,8 @@
         
       // zepto.js，ios才能够点击放大图片？微信浏览器内点击放大图片 
       $(function(){
+        wxSig();  //jssdk签名，用于微信分享等操作
+          
         $('.header').show();
         $('.footer').show();
         //$('.subtitle').show() //.html('曾经以为淡忘的面孔，在相见那一瞬间突然变得清晰起来。')
@@ -345,6 +347,48 @@
         // 微信浏览器内点击放大图片
         $('img.child').on('click',previewImgByWx);
       });
+        
+      // js-sdk签名
+      function wxSig(){
+        $.ajax({
+          //url: 'script/weixinJS/wx_sig.php?url=' + location.href.split('#')[0] ,
+          url: 'script/weixinJS/wx_sig.php',
+          data: "url=" + encodeURIComponent(location.href.split('#')[0]), 
+          dataType: "json",
+          success: function(result){
+            var signPackage = result
+            wx.config({
+              debug    : false,
+              appId    : signPackage.appId,
+              timestamp: signPackage.timestamp,
+              nonceStr : signPackage.nonceStr,
+              signature: signPackage.signature,
+              jsApiList: [
+                'hideOptionMenu','onMenuShareTimeline', 'onMenuShareAppMessage'
+              ]
+            });
+            console.log('sig: ',signPackage)
+            wx.ready(function () {
+              // 在这里调用 API，默认的
+              wx.hideOptionMenu()
+              wx.onMenuShareAppMessage({
+                  title: '历届同学会聚会', // 分享标题
+                  desc: '金龟子【植81】', // 分享描述
+                  link: 'http://yiqizo.com/examples/81/album/index.html', // 分享链接
+                  imgUrl: './images/fafu.jpg', // 分享图标
+                  type: '', // 分享类型,music、video或link，不填默认为link
+                  dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                  success: function () { 
+                      // 用户确认分享后执行的回调函数
+                  },
+                  cancel: function () { 
+                      // 用户取消分享后执行的回调函数
+                  }
+              });
+            });
+          }
+        });
+      }  
     </script> 
 </body>
 </html>
