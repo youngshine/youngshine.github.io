@@ -338,8 +338,10 @@
         $('.xm2000').html('2000<br>厦门')
         $('.fz1995').html('1995<br>福州')
 
-        $("img.child").attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC');//此处可改为具体懒加载图片
-        
+        //$("img.child").attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC'); //gray
+        $("img.child").attr("src","data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs="); //black 此处可改为具体懒加载图片
+        //$('img.child').attr('src','http://fpoimg.com/300x300?text=Advertisement')
+          
         // 微信浏览器内点击放大图片
         $('img.child').on('click',previewImgByWx);
       });
