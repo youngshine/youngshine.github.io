@@ -357,6 +357,7 @@
           dataType: "json",
           success: function(result){
             var signPackage = result
+            console.log('sig: ',signPackage)
             wx.config({
               debug    : false,
               appId    : signPackage.appId,
@@ -367,7 +368,7 @@
                 'hideOptionMenu','onMenuShareTimeline', 'onMenuShareAppMessage'
               ]
             });
-            console.log('sig: ',signPackage)
+            
             wx.ready(function () {
               // 在这里调用 API，默认的
               wx.hideOptionMenu()
