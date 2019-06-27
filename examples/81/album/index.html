@@ -327,7 +327,7 @@
             var signPackage = result
             console.log('sig: ',signPackage)
             wx.config({
-              debug    : false,
+              debug    : true,
               appId    : signPackage.appId,
               timestamp: signPackage.timestamp,
               nonceStr : signPackage.nonceStr,
