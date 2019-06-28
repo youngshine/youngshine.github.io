@@ -92,6 +92,7 @@
       }  /* lazy ends */
     </style>
 
+  
   <script src="./src/zepto.min.js"></script>
   <script src="./src/echo.min.js"></script>
   <script>
@@ -123,7 +124,6 @@
       imgs.forEach(function(img,i){
           img.src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC'
       })
-
       document.querySelector('.qz2010').innerHTML = '2010<br>泉州'
       document.querySelector('.np2005').innerHTML = '2005<br>武夷山'
       document.querySelector('.xm2000').innerHTML = '2000<br>厦门'
@@ -134,7 +134,13 @@
 </head>
 
 <body ontouchstart>
-  <div style="padding:0 15px 15px 75px;color:#fff;display:none;" class="header">
+  <!--
+  <div id="loadingPage">
+    <div style="font-size:10px;color:#888;padding-top:20px;">期待2020再相聚</div>
+    <img id="loadingImg" src="./images/loading.gif" />
+  </div>
+  -->
+  <div class="header" style="padding:0 15px 15px 75px;color:#fff;display:none;">
     <p class="title">相聚如歌，曲终难忘</p>
     <p class="subtitle" style="color:#999;font-size:10px;margin-top:-20px;">
       曾经以为淡忘的面孔，在相见那一瞬间突然变得清晰起来。
@@ -294,13 +300,13 @@
     
     <script src="app.js"></script>
       -->
-    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
     
-    <script> 
+    <script>
       // zepto.js，ios才能够点击放大图片？微信浏览器内点击放大图片 
       $(function(){
         wxSig();  //jssdk签名，用于微信分享等操作
-          
+
         $('.header').show();
         $('.footer').show();
         //$('.subtitle').show() //.html('曾经以为淡忘的面孔，在相见那一瞬间突然变得清晰起来。')
@@ -313,69 +319,17 @@
         //$("img.child").attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC'); //gray
         $("img.child").attr("src","data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs="); //black 此处可改为具体懒加载图片
         //$('img.child').attr('src','http://fpoimg.com/300x300?text=Advertisement')
-          
+        
+        setTimeout('hideLoadingPage()',1000);
+
         // 微信浏览器内点击放大图片
-        $('img.child').on('click',previewImgByWx);
+        $('img.child').on('click',previewImgByWx)
       });
-        
-      // js-sdk签名
-      function wxSig(){
-        $.ajax({
-          //url: 'script/weixinJS/wx_sig.php?url=' + location.href.split('#')[0] ,
-          url: 'http://ysil.sc2yun.com/z/81/anni/script/weixinJS/wx_sig.php',
-          data: "url=" + encodeURIComponent(location.href.split('#')[0]), 
-          dataType: "json",
-          success: function(result){
-            var signPackage = result
-            console.log('sig: ',signPackage)
-            wx.config({
-              debug    : false,
-              appId    : signPackage.appId,
-              timestamp: signPackage.timestamp,
-              nonceStr : signPackage.nonceStr,
-              signature: signPackage.signature,
-              jsApiList: [
-                'hideOptionMenu','chooseImage','onMenuShareTimeline', 'onMenuShareAppMessage'
-              ]
-            });
-            
-            wx.ready(function () {
-              // 在这里调用 API，默认的
-              //wx.hideOptionMenu()
-              wx.onMenuShareTimeline({
-                title: '历届聚会相册【金龟子】', // 分享标题
-                link: 'http://yiqizo.com/examples/81/album/index.html', // 分享链接
-                imgUrl: './images/fafu.jpg', // 分享图标
-                success: function () { 
-                    // 用户确认分享后执行的回调函数
-                    alert('分享成功');
-                },
-                cancel: function () { 
-                    // 用户取消分享后执行的回调函数
-                }
-              }); 
-            });
-              
-            wx.onMenuShareAppMessage({
-              title: '历届同学会聚会', // 分享标题
-              desc: '金龟子【植81】', // 分享描述
-              link: 'http://yiqizo.com/examples/81/album/index.html', // 分享链接
-              imgUrl: './images/fafu.jpg', // 分享图标
-              type: '', // 分享类型,music、video或link，不填默认为link
-              dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
-              success: function () { 
-                  // 用户确认分享后执行的回调函数
-              },
-              cancel: function () { 
-                  // 用户取消分享后执行的回调函数
-                  console.log('cancel')
-              }
-            });
-               
-          }
-        });
-      } 
-        
+
+      function hideLoadingPage(){
+        //$('#loadingPage').hide()
+      }
+
       function previewImgByWx(event){
         console.log(event.target)
         var thumbUrl = event.target.src
@@ -401,13 +355,66 @@
         arr.push(imgPath+'016.jpg')
         arr.push(imgPath+'017.jpg')
         arr.push(imgPath+'018.jpg')
+        // 有的聚会多于18张
+        var moreImgs = ['019.jpg','020.jpg','021.jpg']
+        moreImgs.forEach(function(img,index){
+          var ImgObj = new Image(), fullPath = imgPath + img;
+          ImgObj.src= fullPath;
+          ImgObj.fileSize > 0 && arr.push(fullPath) 
+        })
+
         console.log('current: ',imgUrl)
         console.log('arr: ',arr) //[imgUrl]  
         WeixinJSBridge.invoke('imagePreview', {  
           'current' : imgUrl,  
           'urls'    : arr 
         });
-      }  
+      }
+
+      // js-sdk签名
+      function wxSig(){
+        $.ajax({
+          //url: 'script/weixinJS/wx_sig.php?url=' + location.href.split('#')[0] ,
+          url: 'http://ysil.sc2yun.com/z/81/anni/script/weixinJS/wx_sig.php',
+          data: "url=" + encodeURIComponent(location.href.split('#')[0]), 
+          dataType: "json",
+          success: function(result){
+            console.log('sig: ',result)
+            var signPackage = result
+            wx.config({
+              debug    : false,
+              appId    : signPackage.appId,
+              timestamp: signPackage.timestamp,
+              nonceStr : signPackage.nonceStr,
+              signature: signPackage.signature,
+              jsApiList: [
+                'hideOptionMenu','onMenuShareTimeline', 'onMenuShareAppMessage'
+              ]
+            });
+            
+            wx.ready(function () {
+              // 在这里调用 API，默认的
+              //wx.hideOptionMenu()
+            });
+
+            // 认证的，和 激活成员超过200 ，才可以使用
+            wx.onMenuShareAppMessage({
+                title: '历届聚会相册', // 分享标题
+                desc: '金龟子【植81】', // 分享描述
+                link: 'http://yiqizo.com/examples/81/album/index.html', // 分享链接
+                imgUrl: './images/fafu.jpg', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () { 
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () { 
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+          }
+        });
+      }
     </script> 
 </body>
 </html>
