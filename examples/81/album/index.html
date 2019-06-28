@@ -355,13 +355,13 @@
         arr.push(imgPath+'016.jpg')
         arr.push(imgPath+'017.jpg')
         arr.push(imgPath+'018.jpg')
-        // 有的聚会多于18张
-        var moreImgs = ['019.jpg','020.jpg','021.jpg']
-        moreImgs.forEach(function(img,index){
-          var ImgObj = new Image(), fullPath = imgPath + img;
-          ImgObj.src= fullPath;
-          ImgObj.fileSize > 0 && arr.push(fullPath) 
-        })
+        
+                // 有的聚会多于18张
+        if(imgPath.indexOf('2015')>=0 || imgPath.indexOf('2010')>=0) {
+          arr.push(imgPath+'019.jpg')
+          arr.push(imgPath+'020.jpg')
+          arr.push(imgPath+'021.jpg')
+        }
 
         console.log('current: ',imgUrl)
         console.log('arr: ',arr) //[imgUrl]  
