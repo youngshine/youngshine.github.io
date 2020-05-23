@@ -2385,7 +2385,8 @@
 		-ms-flex-direction: row;
 		flex-direction: row;
 		position: relative;
-		margin: 0 0 2em -2em;
+		/*margin: 0 0 2em -2em; */
+		margin: 0 0 10px -10px;
 	}
 
 		.thumbnails a {
@@ -2396,9 +2397,10 @@
 			border-bottom: none;
 			display: block;
 			width: 100%;
-			margin: 0 0 2em 0;
+			/*margin: 0 0 2em 0;*/
+			margin: 0 0 10px 0;
 			text-align: center;
-			border-radius: 4px;
+			border-radius: 0px;
 			box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25);
 			background-color: rgba(255, 255, 255, 0.075);
 			cursor: pointer;
@@ -2409,19 +2411,24 @@
 			.thumbnails a img {
 				display: block;
 				width: 100%;
-				border-top-left-radius: 4px;
-				border-top-right-radius: 4px;
+				border-top-left-radius: 0px;
+				border-top-right-radius: 0px;
 			}
-
-			.thumbnails a h3 {
+			/*
+			.thumbnails a h3{
 				margin: 1em;
+			} */
+			.thumbnails a p{
+				margin: 5px;
+				font-size:0.6em;
+				
 			}
-
+/*
 			.thumbnails a:hover {
 				background-color: rgba(255, 255, 255, 0.25);
 				box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25), 0 0 0.5em 0 #FF6382;
 			}
-
+*/
 		.thumbnails > div {
 			display: -moz-flex;
 			display: -webkit-flex;
@@ -2431,14 +2438,14 @@
 			-webkit-flex-direction: column;
 			-ms-flex-direction: column;
 			flex-direction: column;
-			width: calc(100% / 3);
-			padding-left: 2em;
+			width: calc(100% / 2);
+			padding-left: 10px;
 		}
 
 			.thumbnails > div > :last-child {
 				margin-bottom: 0;
 			}
-
+/*
 		@media screen and (max-width: 1280px) {
 
 			.thumbnails {
@@ -2487,7 +2494,7 @@
 				}
 
 		}
-
+*/
 /* Poptrox */
 
 	.poptrox-popup {
@@ -2553,10 +2560,11 @@
 /* Wrapper */
 
 	#wrapper {
-		max-width: 68em;
+		/*max-width: 68em;*/
 		width: 100%;
 		margin: 0 auto;
-		padding: 0 2em;
+		/*padding: 0 2em;*/
+		padding: 0 10px;
 		opacity: 1;
 		filter: none;
 		-moz-transition: opacity 1s ease, -moz-filter 1s ease;
