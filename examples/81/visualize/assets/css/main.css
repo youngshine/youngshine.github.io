@@ -2386,7 +2386,7 @@
 		flex-direction: row;
 		position: relative;
 		/*margin: 0 0 2em -2em; */
-		margin: 0 0 10px -10px;
+		margin: 0 0 0 -10px;
 	}
 
 		.thumbnails a {
@@ -2419,9 +2419,10 @@
 				margin: 1em;
 			} */
 			.thumbnails a p{
-				margin: 2px;
-				font-size:0.6em;
-				
+				margin: -20px 0 0 0;
+				font-size:0.5em;
+				color:white;
+				z-index:9999;
 			}
 /*
 			.thumbnails a:hover {
